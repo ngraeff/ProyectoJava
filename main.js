@@ -26,14 +26,15 @@ function calcular_promedio(suma_total,cantidad){
 
 function ingreso_bucle_verificado(){
     ingreso_programa = prompt("Ingrese 1 para ingresar una nota o 0 para terminar")
-    while(ingreso_programa!= 1 && ingreso_programa!= 0){ingreso_programa = prompt("--ERROR--\nIngrese 1 para ingresar una nota o 0 para terminar")}
+    while(ingreso_programa!= 1 && ingreso_programa!= 0 ){ingreso_programa = prompt("--ERROR--\nIngrese 1 para ingresar una nota o 0 para terminar")}
 }
 
 function ingreso_nota_verificado(){
     nota_alumno = Number(prompt(`Ingrese la nota numero ${contador} de ${nombre_alumno}`))
     while (isNaN(nota_alumno)){
-        nota_alumno =  Number(prompt(`--ERROR--\nIngrese la nota numero ${contador} de ${nombre_alumno}`))
+        nota_alumno =  Number(prompt(`--ERROR-- NO ES UN NUMERO\nIngrese la nota numero ${contador} de ${nombre_alumno}`))
     }
+    while (nota_alumno<0 || nota_alumno>10){ nota_alumno =  Number(prompt(`--ERROR-- FUERA DE RANGO\nIngrese la nota numero ${contador} de ${nombre_alumno}`))}
 }
 
 //Comienzo del Bucle
@@ -50,6 +51,7 @@ while (ingreso_programa!= 0){
 promedio_nota = calcular_promedio(suma_nota,contador)
 
 // Ver si aprobo o no
+
 if (contador== 0){alert("Programa invalido. No ha ingresado ninguna nota")}
 else if (promedio_nota >= 6){alert(`El alumno ${nombre_alumno} APROBO CON PROMEDIO ${promedio_nota}\nEn Total tuvo ${contador} notas`)}
 else{ alert(`El alumno ${nombre_alumno} DESAPROBO CON PROMEDIO ${promedio_nota}\nEn Total tuvo ${contador} notas`)}
