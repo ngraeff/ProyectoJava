@@ -11,47 +11,92 @@ function ingreso_nombre_verificado(nombre){
 alert(`Bienvenido ${ingreso_nombre_verificado(nombre_user)}`)
 
 // Definicion de las Variables
-let nombre_alumno= prompt("Ingrese el nombre del alumno")
-let ingreso_programa 
-let nota_alumno
-let suma_nota = 0
-let promedio_nota
-let contador = 0
+let nombreAlumno
+let ingresoPrograma 
+let notaAlumno
+let sumaNota 
+let promedioNota
+let contador 
+let estadoPrograma = true
+const listadoAlumnos = []
 
 //Defincion de las funciones
-
-function calcular_promedio(suma_total,cantidad){
+function calcularPromedio(suma_total,cantidad){
     return suma_total/cantidad
 }
 
-function ingreso_bucle_verificado(){
-    ingreso_programa = prompt("Ingrese 1 para ingresar una nota o 9 para terminar")
-    while(ingreso_programa!= 1 && ingreso_programa!= 9 ){ingreso_programa = prompt("--ERROR--\nIngrese 1 para ingresar una nota o 9 para terminar")}
+function ingresoBucleVerificado(){
+    ingresoPrograma = prompt("Ingrese 1 para ingresar una nota o 9 para terminar")
+    while(ingresoPrograma!= 1 && ingresoPrograma!= 9 ){ingresoPrograma = prompt("--ERROR--\nIngrese 1 para ingresar una nota o 9 para terminar")}
 }
 
-function ingreso_nota_verificado(){
-    nota_alumno = Number(prompt(`Ingrese la nota numero ${contador} de ${nombre_alumno}`))
-    while (isNaN(nota_alumno) || (nota_alumno<=0 || nota_alumno>10)){
-        if (isNaN(nota_alumno)){ nota_alumno =  Number(prompt(`--ERROR-- NO ES UN NUMERO\nIngrese la nota numero ${contador} de ${nombre_alumno}`))}
-        else{nota_alumno =  Number(prompt(`--ERROR-- FUERA DE RANGO\nIngrese la nota numero ${contador} de ${nombre_alumno}`))}
+function ingresoNotaVerificado(){
+    notaAlumno = Number(prompt(`Ingrese la nota numero ${contador} de ${nombreAlumno}`))
+    while (isNaN(notaAlumno) || (notaAlumno<=0 || notaAlumno>10)){
+        if (isNaN(notaAlumno)){ notaAlumno =  Number(prompt(`--ERROR-- NO ES UN NUMERO\nIngrese la nota numero ${contador} de ${nombreAlumno}`))}
+        else{notaAlumno =  Number(prompt(`--ERROR-- FUERA DE RANGO\nIngrese la nota numero ${contador} de ${nombreAlumno}`))}
     }
 }
 
+function seguirPrograma(){
+    let estado
+    estado= prompt("¿Desea ingresar un nuevo alumno? (Si/No)")
+    if (estado.toLowerCase() == "no"){estadoPrograma= false}
+}
+
+function mostrarAlumnos(){
+    for (let i= 0; i <listadoAlumnos.length; i++) {
+        if (listadoAlumnos[i].aprobado){
+            alert(`El alumno: ${listadoAlumnos[i].nombre} APROBO con promedio ${listadoAlumnos[i].promedio} :)`)
+        }else{ alert(`El alumno: ${listadoAlumnos[i].nombre} DESAPROBO con promedio ${listadoAlumnos[i].promedio} :(`)}
+    }
+}
+
+
+class Alumno{
+    constructor(nombre,promedio,aprobado) {
+        this.nombre = nombre
+        this.promedio = promedio
+        this.aprobado = aprobado
+        this.sistema= "Sin cargar"
+    }
+
+    cargar_nota(){
+        this.sistema= "Nota Cargada"
+    }
+}
+
+
 //Comienzo del Bucle
 
-nombre_alumno= ingreso_nombre_verificado(nombre_alumno)
+while (estadoPrograma) {
+    nombreAlumno = prompt("Ingrese el nombre del alumno")
+    nombreAlumno= ingreso_nombre_verificado(nombreAlumno)
+    ingresoBucleVerificado()
+    contador = 0
+    sumaNota = 0
+    //Empieza el bucle de cada alumno
 
-ingreso_bucle_verificado()
-while (ingreso_programa!= 9){
-    contador ++
-    ingreso_nota_verificado()
-    suma_nota = suma_nota + nota_alumno
-    ingreso_bucle_verificado()
+    while (ingresoPrograma!= 9){
+        contador ++
+        ingresoNotaVerificado()
+        sumaNota = sumaNota + notaAlumno
+        ingresoBucleVerificado()
+    }
+
+    if (contador != 0){
+        promedioNota = calcularPromedio(sumaNota,contador)
+        alumno = new Alumno(nombreAlumno,promedioNota,promedioNota >= 6)
+    }
+    listadoAlumnos.push(alumno)
+    seguirPrograma()
 }
-promedio_nota = calcular_promedio(suma_nota,contador)
+
 
 // Ver si aprobo o no
 
+mostrarAlumnos()
+/*  
 if (contador== 0){alert("Programa invalido. No ha ingresado ninguna nota")}
-else if (promedio_nota >= 6){alert(`El alumno ${nombre_alumno} APROBO CON PROMEDIO ${promedio_nota}\nEn Total tuvo ${contador} notas`)}
-else{ alert(`El alumno ${nombre_alumno} DESAPROBO CON PROMEDIO ${promedio_nota}\nEn Total tuvo ${contador} notas`)}
+else if (promedioNota >= 6){alert(`El alumno ${nombreAlumno} APROBO CON PROMEDIO ${promedioNota}\nEn Total tuvo ${contador} notas`)}
+else{ alert(`El alumno ${nombreAlumno} DESAPROBO CON PROMEDIO ${promedioNota}\nEn Total tuvo ${contador} notas`)}*/
