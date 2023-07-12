@@ -32,6 +32,12 @@ function ingresoBucleVerificado(){
     while(ingresoPrograma!= 1 && ingresoPrograma!= 9 ){ingresoPrograma = prompt("--ERROR--\nIngrese 1 para ingresar una nota o 9 para terminar")}
 }
 
+function verificarPrimeraNota(){
+    while(ingresoPrograma!=1){
+        ingresoPrograma= prompt("Ingrese 1 para por lo menos ingresar 1 nota")
+    }
+}
+
 function ingresoNotaVerificado(){
     notaAlumno = Number(prompt(`Ingrese la nota numero ${contador} de ${nombreAlumno}`))
     while (isNaN(notaAlumno) || (notaAlumno<=0 || notaAlumno>10)){
@@ -43,6 +49,7 @@ function ingresoNotaVerificado(){
 function seguirPrograma(){
     let estado
     estado= prompt("¿Desea ingresar un nuevo alumno? (Si/No)")
+    while (estado.toLowerCase() != "no" && estado.toLowerCase() != "si"){estado = prompt("--ERROR--\t¿Desea ingresar un nuevo alumno? (Si/No)")}
     if (estado.toLowerCase() == "no"){estadoPrograma= false}
 }
 
@@ -97,7 +104,7 @@ while (estadoPrograma) {
     ingresoBucleVerificado()
     contador = 0
     sumaNota = 0
-
+    verificarPrimeraNota()
     //Empieza el bucle de cada alumno
     while (ingresoPrograma!= 9){
         contador ++
@@ -123,3 +130,6 @@ ordenarLista()
 // Ver si aprobo o no cada alumno
 mostrarAlumnos()
 
+cargarNotas()
+
+console.log(listadoAlumnos)
