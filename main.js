@@ -18,6 +18,8 @@ let sumaNota
 let promedioNota
 let contador 
 let estadoPrograma = true
+
+//Definicion de Array
 const listadoAlumnos = []
 
 //Defincion de las funciones
@@ -52,7 +54,27 @@ function mostrarAlumnos(){
     }
 }
 
+function ordenarLista(){
+    let forma= Number(prompt("Seleccione como desea ordenas la lista por promedio de menor a mayor (1) o de mayor a menor (2) (1/2)"))
 
+    while (forma != 1 && forma !=2){
+        forma= prompt("Seleccione una opcion para organizar los datos (1/2)")
+    }
+
+    if (forma == 1){
+        listadoAlumnos.sort((alumnoA, alumnoB)=> alumnoA.promedio - alumnoB.promedio)
+    }
+    else( listadoAlumnos.sort((alumnoA, alumnoB)=> alumnoB.promedio - alumnoA.promedio))
+}
+
+function cargarNotas(){
+    for (let i= 0; i <listadoAlumnos.length; i++) {
+        listadoAlumnos[i].cargarNotaSistema()
+    }
+    alert("Notas Cargadas correctamente")
+}
+
+// Creacion de clase Alumno
 class Alumno{
     constructor(nombre,promedio,aprobado) {
         this.nombre = nombre
@@ -61,13 +83,13 @@ class Alumno{
         this.sistema= "Sin cargar"
     }
 
-    cargar_nota(){
+    cargarNotaSistema(){
         this.sistema= "Nota Cargada"
     }
 }
 
 
-//Comienzo del Bucle
+//Comienzo del Bucle general
 
 while (estadoPrograma) {
     nombreAlumno = prompt("Ingrese el nombre del alumno")
@@ -75,8 +97,8 @@ while (estadoPrograma) {
     ingresoBucleVerificado()
     contador = 0
     sumaNota = 0
-    //Empieza el bucle de cada alumno
 
+    //Empieza el bucle de cada alumno
     while (ingresoPrograma!= 9){
         contador ++
         ingresoNotaVerificado()
@@ -88,15 +110,16 @@ while (estadoPrograma) {
         promedioNota = calcularPromedio(sumaNota,contador)
         alumno = new Alumno(nombreAlumno,promedioNota,promedioNota >= 6)
     }
+    //Array donde se guardan los distintos alumnos
     listadoAlumnos.push(alumno)
+
     seguirPrograma()
 }
 
+//Ordenar la lista segun promedio
+ordenarLista()
 
-// Ver si aprobo o no
 
+// Ver si aprobo o no cada alumno
 mostrarAlumnos()
-/*  
-if (contador== 0){alert("Programa invalido. No ha ingresado ninguna nota")}
-else if (promedioNota >= 6){alert(`El alumno ${nombreAlumno} APROBO CON PROMEDIO ${promedioNota}\nEn Total tuvo ${contador} notas`)}
-else{ alert(`El alumno ${nombreAlumno} DESAPROBO CON PROMEDIO ${promedioNota}\nEn Total tuvo ${contador} notas`)}*/
+
