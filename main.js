@@ -54,10 +54,10 @@ function seguirPrograma(){
 }
 
 function mostrarAlumnos(){
-    for (let i= 0; i <listadoAlumnos.length; i++) {
-        if (listadoAlumnos[i].aprobado){
-            alert(`El alumno: ${listadoAlumnos[i].nombre} APROBO con promedio ${listadoAlumnos[i].promedio} :)`)
-        }else{ alert(`El alumno: ${listadoAlumnos[i].nombre} DESAPROBO con promedio ${listadoAlumnos[i].promedio} :(`)}
+    for (const alumnoIndividual of listadoAlumnos) {
+        if (alumnoIndividual.aprobado){
+            alert(`El alumno: ${alumnoIndividual.nombre} APROBO con promedio ${alumnoIndividual.promedio} :)`)
+        }else{ alert(`El alumno: ${alumnoIndividual.nombre} DESAPROBO con promedio ${alumnoIndividual.promedio} :(`)}
     }
 }
 
