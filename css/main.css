@@ -220,4 +220,140 @@ header nav .navbar .navbar--link:hover {
   background-color: #00a6d8;
   color: black;
 }
-
+.principal .contenedor__alumno {
+  width: 100%;
+  height: 50rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  align-items: center;
+}
+.principal .contenedor__alumno button {
+  background-color: rgb(79, 165, 165);
+  height: 5rem;
+  width: 10rem;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  border: none;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1rem;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+  color: white;
+}
+.principal .contenedor__alumno button:hover {
+  cursor: pointer;
+  background-color: #00a6d8;
+  color: black;
+}
+.principal .contenedor__alumno .formulario__alumno {
+  margin-top: 5rem;
+  background-color: #01004d;
+  width: 50rem;
+  height: 35rem;
+  padding: 5rem;
+  border-radius: 1rem;
+  border: 1px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.principal .contenedor__alumno .formulario__alumno .contenedor__alumno--div {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.principal .contenedor__alumno .formulario__alumno .contenedor__alumno--div .datos__nombre {
+  margin-bottom: 2rem;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.principal .contenedor__alumno .formulario__alumno .contenedor__alumno--div .datos__nombre label {
+  color: rgb(255, 255, 255);
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0 2rem;
+}
+.principal .contenedor__alumno .formulario__alumno .contenedor__alumno--div .datos__nombre input {
+  width: 15rem;
+  height: 2rem;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: #01004d;
+  border-bottom: 1px solid white;
+  color: white;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+.principal .contenedor__alumno .formulario__alumno .contenedor__alumno--div .datos__nombre input:focus {
+  outline: none;
+}
+.principal .contenedor__alumno .formulario__alumno .contenedor__alumno--div .datos__notas {
+  margin-bottom: 5rem;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.principal .contenedor__alumno .formulario__alumno .contenedor__alumno--div .datos__notas div {
+  padding: 2rem 0;
+}
+.principal .contenedor__alumno .formulario__alumno .contenedor__alumno--div .datos__notas div label {
+  color: rgb(255, 255, 255);
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0 2rem;
+}
+.principal .contenedor__alumno .formulario__alumno .contenedor__alumno--div .datos__notas div input {
+  width: 15rem;
+  height: 2rem;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: #01004d;
+  border-bottom: 1px solid white;
+  color: white;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+.principal .contenedor__alumno .formulario__alumno .contenedor__alumno--div .datos__notas div input:focus {
+  outline: none;
+}
