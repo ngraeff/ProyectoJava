@@ -1,7 +1,10 @@
+/* // Creacion de clase Alumno
+
+
 //Bienvenida
 let nombre_user = prompt("Por favor ingrese su nombre:")
 
-//Funcion ingreso nombre verificado
+//Funcion ingreso nombre verSificado
 //La hago aca y no abajo para así tambien la agrego al alert del comienzo
 function ingreso_nombre_verificado(nombre){
     while(nombre == null || nombre == ""){nombre = prompt("--ERROR--\nPor favor ingrese un nombre:")}
@@ -81,20 +84,6 @@ function cargarNotas(){
     alert("Notas Cargadas correctamente")
 }
 
-// Creacion de clase Alumno
-class Alumno{
-    constructor(nombre,promedio,aprobado) {
-        this.nombre = nombre
-        this.promedio = promedio
-        this.aprobado = aprobado
-        this.sistema= "Sin cargar"
-    }
-
-    cargarNotaSistema(){
-        this.sistema= "Nota Cargada"
-    }
-}
-
 
 //Comienzo del Bucle general
 
@@ -132,4 +121,67 @@ mostrarAlumnos()
 
 cargarNotas()
 
-console.log(listadoAlumnos)
+console.log(listadoAlumnos) */
+
+class Alumno{
+    constructor(nombre) {
+        this.nombre = nombre
+        this.promedio = 0
+        this.aprobado = ""
+        this.notas = []
+        
+    }
+
+    subirNotas(nota){
+        this.notas.push(nota)
+    }
+
+    calcularPromedio(){
+        let sumaNotas = 0
+        for (const nota of this.notas) {
+            sumaNotas += nota
+        }
+        this.promedio = sumaNotas/this.notas.length
+    }
+
+}
+
+class GrupoDeClase{
+    constructor(nombre){
+        this.nombre = nombre
+        this.alumnos = []
+    }
+
+    contarAlumnos(){
+        return this.alumnos.length
+    }
+    añadirAlumno(nuevoAlumno){
+        this.alumnos.push(nuevoAlumno)
+    }
+}
+
+
+function ValidarInputClase(valor){
+    if (valor == null || valor == ""){alert("Por favor ingrese un nombre de clase")}
+    else{alert(`Se ha agregado una nueva clase llamada: ${valor}`)}
+}
+
+let botonNuevaClase = document.getElementById("botonNuevaClase")
+
+botonNuevaClase.addEventListener("click",()=>{
+    document.getElementById("contenedorInicio").style.display= "none"
+    document.getElementById("contenedorForm").style.display= "flex"
+})
+
+let formularioClaseBoton = document.getElementById("formularioClaseBoton")
+
+formularioClaseBoton.addEventListener("click",()=>{
+    let claseInput = document.getElementById("formuladrioClaseInput")
+    valorInput= claseInput.value
+    ValidarInputClase(valorInput)
+    let nuevaClase = new GrupoDeClase(valorInput)
+    let nuevaClaseJSON = JSON.stringify(nuevaClase);
+    localStorage.setItem(valorInput,nuevaClaseJSON)
+
+})
+

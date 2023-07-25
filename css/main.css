@@ -1,0 +1,223 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  width: 100%;
+  height: 6rem;
+  border-bottom: 2px solid black;
+}
+header nav {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+header nav .navbar--logo {
+  width: 4rem;
+  padding-left: 2rem;
+}
+header nav .navbar {
+  width: 50%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style: none;
+}
+header nav .navbar .navbar--link {
+  text-decoration: none;
+  color: black;
+  font-size: 1.5rem;
+  font-weight: 500;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+header nav .navbar .navbar--link:hover {
+  color: rgb(10, 53, 117);
+}
+
+.principal {
+  width: 100%;
+  height: 90vh;
+}
+.principal .contenedor__inicio {
+  padding-top: 5rem;
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.principal .contenedor__inicio img {
+  width: 30rem;
+  -webkit-transition: 1s all;
+  transition: 1s all;
+  border-radius: 50%;
+}
+.principal .contenedor__inicio img:hover {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+.principal .contenedor__inicio .contenedor__botones {
+  width: 30rem;
+  padding-top: 2rem;
+  height: 10rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.principal .contenedor__inicio .contenedor__botones button {
+  background-color: rgb(79, 165, 165);
+  height: 5rem;
+  width: 10rem;
+  padding: 0.5rem;
+  margin: auto;
+  border-radius: 1rem;
+  border: none;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1rem;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+.principal .contenedor__inicio .contenedor__botones button:hover {
+  cursor: pointer;
+  background-color: #01004d;
+  color: aliceblue;
+}
+.principal .contanedor__form {
+  width: 100%;
+  height: 50rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  align-items: center;
+}
+.principal .contanedor__form .formulario__clase {
+  margin-top: 5rem;
+  background-color: #01004d;
+  width: 50rem;
+  height: 35rem;
+  padding: 5rem;
+  border-radius: 1rem;
+  border: 1px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.principal .contanedor__form .formulario__clase .formulario__clase--contenedor {
+  margin-bottom: 5rem;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.principal .contanedor__form .formulario__clase .formulario__clase--contenedor .formulario__clase--label {
+  color: rgb(255, 255, 255);
+  font-size: 2rem;
+  font-weight: 500;
+  margin-right: 2rem;
+}
+.principal .contanedor__form .formulario__clase .formulario__clase--contenedor .formulario__clase--input {
+  width: 15rem;
+  height: 2rem;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: #01004d;
+  border-bottom: 1px solid white;
+  color: white;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+.principal .contanedor__form .formulario__clase .formulario__clase--contenedor .formulario__clase--input:focus {
+  outline: none;
+}
+.principal .contanedor__form .formulario__clase .formulario__clase--contBoton {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  margin-top: 3rem;
+}
+.principal .contanedor__form .formulario__clase .formulario__clase--contBoton button {
+  background-color: rgb(79, 165, 165);
+  height: 5rem;
+  width: 10rem;
+  padding: 0.5rem;
+  margin: auto;
+  border-radius: 1rem;
+  border: none;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1rem;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+  color: white;
+}
+.principal .contanedor__form .formulario__clase .formulario__clase--contBoton button:hover {
+  cursor: pointer;
+  background-color: #00a6d8;
+  color: black;
+}
+
