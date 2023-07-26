@@ -182,8 +182,9 @@ let botonOtroAlumno = document.getElementById("botonOtroAlumno")
 
 let formularioAlumno = document.getElementById("formularioAlumno")
 let formularioClase = document.getElementById("formularioClase")
-
+let formularioEditarClase = document.getElementById("formularioEditarClase")
 let botonEditarClase= document.getElementById("botonEditarClase")
+let botonBuscarClase= document.getElementById("botonBuscarClase")
 
 
 
@@ -252,12 +253,12 @@ botonNuevaClase.addEventListener("click",()=>{
     contenedorInicio.style.display= "none"
     contenedorForm.style.display= "flex"
 })
-
+/* Guarda el nombre de la Clase */
 formularioClaseBoton.addEventListener("click",(event)=>{
 
     event.preventDefault()
     let claseInput = document.getElementById("formuladrioClaseInput")
-    claseSeleccionada= claseInput.value
+    claseSeleccionada= claseInput.value.toLocaleLowerCase()
     if  (validarInputTexto(claseSeleccionada)){
 
         let nuevaClase = new GrupoDeClase(claseSeleccionada)
@@ -274,6 +275,7 @@ formularioClaseBoton.addEventListener("click",(event)=>{
     
 })
 
+/* Se guarda un alumno */
 botonAlumno.addEventListener("click",(event)=>{
     event.preventDefault()
     
@@ -321,10 +323,28 @@ botonEditarClase.addEventListener("click",()=>{
     contenedorEditar.style.display= "flex"
 })
 
+
+botonBuscarClase.addEventListener("click",(event)=>{
+    event.preventDefault()
+    nombreClase= document.getElementById("inputEditar").value
+    nombreClase = nombreClase.toLocaleLowerCase()
+    console.log("Hola")
+    if (!(localStorage.hasOwnProperty(nombreClase))){
+        alert("La clase que busca no existe")
+    }
+    else{
+        alert(`La clase ${nombreClase.toUpperCase()} ha sido encontrada. Ahora puede agregarle mas alumnos`)
+        claseSeleccionada = nombreClase
+        contenedorEditar.style.display= "none"
+        contenedorAlumno.style.display= "flex"
+        formularioEditarClase.reset()
+    }
+})
+
 /* 
 
 HACER LINEAS POR CADA ALUMNO  (26/7)
-HACER QUE SE PUEDA AGRAGAR MAS ALUMNOS  (26/7)
+
 HACER QUE SE PUEDA BUSCAR LOS ALUMNOS   (proximamente)
 
 // Recuperar el objeto GrupoDeClase del Local Storage
