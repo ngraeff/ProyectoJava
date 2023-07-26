@@ -357,3 +357,228 @@ header nav .navbar .navbar--link:hover {
 .principal .contenedor__alumno .formulario__alumno .contenedor__alumno--div .datos__notas div input:focus {
   outline: none;
 }
+.principal .contenedor__final {
+  width: 100%;
+  height: 50rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  align-items: center;
+}
+.principal .contenedor__final div {
+  background-color: #01004d;
+  width: 50rem;
+  height: 35rem;
+  padding: 5rem;
+  border-radius: 1rem;
+  border: 1px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.principal .contenedor__final div button {
+  background-color: rgb(79, 165, 165);
+  height: 5rem;
+  width: 10rem;
+  padding: 0.5rem;
+  margin: 3rem;
+  border-radius: 1rem;
+  border: none;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1rem;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+  color: white;
+}
+.principal .contenedor__final div button:hover {
+  cursor: pointer;
+  background-color: #00a6d8;
+  color: black;
+}
+.principal .contenedor__editar {
+  width: 100%;
+  height: 50rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.principal .contenedor__editar div {
+  background-color: #01004d;
+  width: 50rem;
+  height: 35rem;
+  padding: 5rem;
+  border-radius: 1rem;
+  border: 1px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.principal .contenedor__editar div h2 {
+  color: aliceblue;
+  font-size: 3rem;
+  padding-bottom: 10rem;
+}
+.principal .contenedor__editar div form {
+  height: auto;
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 4rem;
+}
+.principal .contenedor__editar div form label {
+  color: rgb(255, 255, 255);
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0 2rem;
+}
+.principal .contenedor__editar div form input {
+  width: 15rem;
+  height: 2rem;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: #01004d;
+  border-bottom: 1px solid white;
+  color: white;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+.principal .contenedor__editar div form input:focus {
+  outline: none;
+}
+.principal .contenedor__editar div button {
+  background-color: rgb(79, 165, 165);
+  height: 5rem;
+  width: 10rem;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  border: none;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1rem;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+  color: white;
+}
+.principal .contenedor__editar div button:hover {
+  cursor: pointer;
+  background-color: #00a6d8;
+  color: black;
+}
+
+.lista__clases {
+  width: 100%;
+  height: 90vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.lista__clases .lista__clases--ul {
+  margin-top: 3rem;
+  height: 40rem;
+  width: 80%;
+  background-color: #00a6d8;
+  border-radius: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  list-style: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow-x: hidden;
+}
+.lista__clases .lista__clases--ul .clase__individual {
+  border-bottom: 1px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 4rem;
+  padding: 1rem 0;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+.lista__clases .lista__clases--ul .clase__individual:hover {
+  background-color: #0065d8;
+  height: 5rem;
+}
+.lista__clases .lista__clases--ul .clase__individual .boton__invisible {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+.lista__clases .lista__clases--ul .clase__individual .boton__invisible:hover {
+  cursor: pointer;
+}
+.lista__clases .lista__clases--ul .clase__individual .boton__invisible .h2NoHay {
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.5rem;
+  font-style: italic;
+}
+.lista__clases .lista__clases--ul .clase__individual .boton__invisible h2 {
+  font-size: 1.5rem;
+  color: black;
+  font-weight: 500;
+  margin-left: 5rem;
+}
+.lista__clases .lista__clases--ul .clase__individual .boton__invisible p {
+  font-size: 1.5em;
+  color: black;
+  font-weight: 500;
+  margin-right: 4rem;
+}

@@ -1,8 +1,8 @@
-.principal{
-    width: 100%;    
+.principal {
+    width: 100%;
     height: 90vh;
 
-    .contenedor__inicio{
+    .contenedor__inicio {
         padding-top: 5rem;
         width: 100%;
         height: auto;
@@ -11,17 +11,18 @@
         align-items: center;
         justify-content: center;
 
-        img{
+        img {
             width: 30rem;
             transition: 1s all;
 
             border-radius: 50%;
-            &:hover{
+
+            &:hover {
                 transform: rotate(360deg);
             }
         }
 
-        .contenedor__botones{
+        .contenedor__botones {
             width: 30rem;
             padding-top: 2rem;
             height: 10rem;
@@ -29,7 +30,7 @@
             justify-content: center;
             align-items: center;
 
-            button{
+            button {
                 background-color: rgb(79, 165, 165);
                 height: 5rem;
                 width: 10rem;
@@ -42,16 +43,16 @@
                 font-size: 1rem;
                 transition: .3s all;
 
-                &:hover{
+                &:hover {
                     cursor: pointer;
-                    background-color:#01004d ;
+                    background-color: #01004d;
                     color: aliceblue;
                 }
             }
         }
     }
 
-    .contanedor__form{
+    .contanedor__form {
         width: 100%;
         height: 50rem;
         display: flex;
@@ -59,7 +60,7 @@
         justify-content: center;
         align-items: center;
 
-        .formulario__clase{
+        .formulario__clase {
             margin-top: 5rem;
             background-color: #01004d;
             width: 50rem;
@@ -72,24 +73,25 @@
             justify-content: center;
             flex-direction: column;
 
-            .formulario__clase--contenedor{
+            .formulario__clase--contenedor {
                 margin-bottom: 5rem;
                 width: 100%;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                .formulario__clase--label{
+
+                .formulario__clase--label {
                     color: rgb(255, 255, 255);
                     font-size: 2rem;
                     font-weight: 500;
                     margin-right: 2rem;
                 }
 
-                .formulario__clase--input{
+                .formulario__clase--input {
                     width: 15rem;
                     height: 2rem;
                     border: none;
-                    
+
                     font-size: 1rem;
                     font-weight: 500;
                     background-color: #01004d;
@@ -97,23 +99,24 @@
                     color: white;
                     transition: .3s all;
 
-                    &:focus{
+                    &:focus {
                         outline: none;
-                    
+
                     }
-                    
+
                 }
-                
-            
+
+
             }
-            .formulario__clase--contBoton{
+
+            .formulario__clase--contBoton {
                 width: 100%;
                 display: flex;
                 align-items: end;
                 justify-content: end;
                 margin-top: 3rem;
 
-                button{
+                button {
                     background-color: rgb(79, 165, 165);
                     height: 5rem;
                     width: 10rem;
@@ -127,25 +130,26 @@
                     transition: .3s all;
                     color: white;
 
-                    &:hover{
+                    &:hover {
                         cursor: pointer;
-                        background-color:#00a6d8 ;
+                        background-color: #00a6d8;
                         color: black;
                     }
+                }
             }
-            }
-            
+
         }
     }
 
-    .contenedor__alumno{
+    .contenedor__alumno {
         width: 100%;
         height: 50rem;
         display: flex;
         align-items: center;
         justify-content: center;
         align-items: center;
-        button{
+
+        button {
             background-color: rgb(79, 165, 165);
             height: 5rem;
             width: 10rem;
@@ -159,14 +163,14 @@
             transition: .3s all;
             color: white;
 
-            &:hover{
+            &:hover {
                 cursor: pointer;
-                background-color:#00a6d8 ;
+                background-color: #00a6d8;
                 color: black;
             }
         }
-        
-        .formulario__alumno{
+
+        .formulario__alumno {
             margin-top: 5rem;
             background-color: #01004d;
             width: 50rem;
@@ -178,80 +182,209 @@
             align-items: center;
             justify-content: center;
 
-            .contenedor__alumno--div{
+            .contenedor__alumno--div {
                 height: 100%;
                 width: 100%;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                .datos__nombre{
+
+                .datos__nombre {
                     margin-bottom: 2rem;
                     width: 100%;
                     display: flex;
                     justify-content: center;
-                    
-                    label{
+
+                    label {
                         color: rgb(255, 255, 255);
                         font-size: 1.5rem;
                         font-weight: 500;
                         margin: 0 2rem;
                     }
-                    input{
+
+                    input {
                         width: 15rem;
                         height: 2rem;
                         border: none;
-                        
+
                         font-size: 1rem;
                         font-weight: 500;
                         background-color: #01004d;
                         border-bottom: 1px solid white;
                         color: white;
                         transition: .3s all;
-                        &:focus{
+
+                        &:focus {
                             outline: none;
-                        
+
                         }
-                        
+
                     }
                 }
-                .datos__notas{
+
+                .datos__notas {
                     margin-bottom: 5rem;
                     width: 100%;
                     display: flex;
                     justify-content: center;
                     flex-direction: column;
 
-                    div{
+                    div {
                         padding: 2rem 0;
-                        label{
+
+                        label {
                             color: rgb(255, 255, 255);
                             font-size: 1.5rem;
                             font-weight: 500;
                             margin: 0 2rem;
                         }
-                        input{
+
+                        input {
                             width: 15rem;
                             height: 2rem;
                             border: none;
-                            
+
                             font-size: 1rem;
                             font-weight: 500;
                             background-color: #01004d;
                             border-bottom: 1px solid white;
                             color: white;
                             transition: .3s all;
-                            &:focus{
+
+                            &:focus {
                                 outline: none;
-                            
+
                             }
                         }
                     }
-                
-                    
+
+
+                }
+            }
+        }
+    }
+
+    .contenedor__final {
+        width: 100%;
+        height: 50rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-items: center;
+
+        div {
+            background-color: #01004d;
+            width: 50rem;
+            height: 35rem;
+            padding: 5rem;
+            border-radius: 1rem;
+            border: 1px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            button {
+                background-color: rgb(79, 165, 165);
+                height: 5rem;
+                width: 10rem;
+                padding: .5rem;
+                margin: 3rem;
+                border-radius: 1rem;
+                border: none;
+                text-align: center;
+                font-weight: 500;
+                font-size: 1rem;
+                transition: .3s all;
+                color: white;
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: #00a6d8;
+                    color: black;
+                }
+            }
+        }
+    }
+
+    .contenedor__editar{
+        width: 100%;
+        height: 50rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        
+        div{
+            background-color: #01004d;
+            width: 50rem;
+            height: 35rem;
+            padding: 5rem;
+            border-radius: 1rem;
+            border: 1px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            h2{
+                color: aliceblue;
+                font-size: 3rem;
+                padding-bottom: 10rem;
+            }
+
+            form{
+                height: auto;
+                width: 80%;
+                display: flex;justify-content: center;
+                margin-bottom: 4rem;
+
+                label {
+                    color: rgb(255, 255, 255);
+                    font-size: 1.5rem;
+                    font-weight: 500;
+                    margin: 0 2rem;
+                }
+
+                input {
+                    width: 15rem;
+                    height: 2rem;
+                    border: none;
+
+                    font-size: 1rem;
+                    font-weight: 500;
+                    background-color: #01004d;
+                    border-bottom: 1px solid white;
+                    color: white;
+                    transition: .3s all;
+
+                    &:focus {
+                        outline: none;
+
+                    }
+                }
+            }
+
+            button {
+                background-color: rgb(79, 165, 165);
+                height: 5rem;
+                width: 10rem;
+                padding: .5rem;
+    
+                border-radius: 1rem;
+                border: none;
+                text-align: center;
+                font-weight: 500;
+                font-size: 1rem;
+                transition: .3s all;
+                color: white;
+    
+                &:hover {
+                    cursor: pointer;
+                    background-color: #00a6d8;
+                    color: black;
                 }
             }
         }
     }
 }
-

@@ -147,19 +147,24 @@ class Alumno{
         this.promedio = sumaNotas/this.notas.length
     }
 
+    verificarAprobado(){
+        if (this.promedio >= 6){this.aprobado = true}
+        else{this.aprobado = false}
+    }
 }
 class GrupoDeClase{
     constructor(nombre){
         this.nombre = nombre
         this.alumnos = []
     }
-
     contarAlumnos(){
         return this.alumnos.length
     }
-    añadirAlumno(nuevoAlumno){
-        this.alumnos.push(nuevoAlumno)
+
+    agregarAlumno(alumno){
+        this.alumnos.push(alumno)
     }
+    
 }
 
 /* Variables y Arrays */
@@ -172,69 +177,171 @@ let claseSeleccionada = ""
 let botonNuevaClase = document.getElementById("botonNuevaClase")
 let formularioClaseBoton = document.getElementById("formularioClaseBoton")
 let botonAlumno = document.getElementById("botonAlumno")
+let botonVolverInicio = document.getElementById("botonVolverInicio")
+let botonOtroAlumno = document.getElementById("botonOtroAlumno") 
+
+let formularioAlumno = document.getElementById("formularioAlumno")
+let formularioClase = document.getElementById("formularioClase")
+
+let botonEditarClase= document.getElementById("botonEditarClase")
+
+
+
+/* Secciones del index */
+let contenedorInicio = document.getElementById("contenedorInicio")
+let contenedorForm = document.getElementById("contenedorForm")
+let contenedorAlumno =  document.getElementById("contenedorAlumno")
+let contenedorFinal =  document.getElementById("contenedorFinal")
+let contenedorEditar = document.getElementById("contenedorEditar")
 
 /* Funciones */
 
-function ValidarInputClase(valor){
-    if (valor == null || valor == ""){alert("Por favor ingrese un nombre de clase")}
-    else{alert(`Se ha agregado una nueva clase llamada: ${valor}`)}
+function reconstruirClases(clase){
+    let nombre = clase.nombre
+    let alumnos = [] 
+    console.log(clase.alumnos)
+
+    claseReconstruida = new GrupoDeClase(nombre)
+    for (const alumno of clase.alumnos) {
+        let alumnoReconstruido = new Alumno(alumno.nombre, alumno.apellido)
+        alumnoReconstruido.promedio = alumno.promedio
+        alumnoReconstruido.aprobado = alumno.aprobado
+        alumnoReconstruido.notas = alumno.notas
+        alumnos.push(alumnoReconstruido)
+    }
+    claseReconstruida.alumnos = alumnos
+    return claseReconstruida
 }
+
+function validarInputTexto(valor){
+    let val= true
+    if (valor == null || valor.trim() == "" ){
+        alert("Por favor ingrese texto")
+        val= false}
+    return val
+}
+
+function validarInputNotas(nota) {
+    let val = true
+    if (nota > 10 || nota <= 0 || isNaN(nota) || nota === "") {
+    alert("Ingrese las notas en un rango de 0 - 10")
+    console.log(nota)
+    val = false
+    }
+    return val
+}
+
+function guardarNombreDeClases(nombre){
+    let grupos = localStorage.getItem("ArraydeClases")
+    if (grupos == null || grupos == ""){
+        nombreDeLasClases.push(nombre)
+        localStorage.setItem("ArraydeClases", JSON.stringify(nombreDeLasClases))}
+    else{
+        grupos = JSON.parse(grupos)
+        grupos.push(nombre)
+        alert(grupos)
+        localStorage.setItem("ArraydeClases", JSON.stringify(grupos))
+    }
+}
+
 
 
 /* Eventos */
 
 botonNuevaClase.addEventListener("click",()=>{
-    document.getElementById("contenedorInicio").style.display= "none"
-    document.getElementById("contenedorForm").style.display= "flex"
+    contenedorInicio.style.display= "none"
+    contenedorForm.style.display= "flex"
 })
 
 formularioClaseBoton.addEventListener("click",(event)=>{
+
     event.preventDefault()
     let claseInput = document.getElementById("formuladrioClaseInput")
-    nombreDeLaClase= claseInput.value
-    claseSeleccionada = nombreDeLaClase
-    ValidarInputClase(nombreDeLaClase)
+    claseSeleccionada= claseInput.value
+    if  (validarInputTexto(claseSeleccionada)){
 
-    nombreDeLasClases.push(nombreDeLaClase)
-    let nuevaClase = new GrupoDeClase(nombreDeLaClase)
-    let nuevaClaseJSON = JSON.stringify(nuevaClase)
-    localStorage.setItem(nombreDeLaClase,nuevaClaseJSON)
-    document.getElementById("contenedorForm").style.display= "none"
-    document.getElementById("contenedorAlumno").style.display= "flex"
+        let nuevaClase = new GrupoDeClase(claseSeleccionada)
+        let nuevaClaseJSON = JSON.stringify(nuevaClase)
+        localStorage.setItem(claseSeleccionada,nuevaClaseJSON)
+        contenedorForm.style.display= "none"
+        contenedorAlumno.style.display= "flex"
 
-    localStorage.setItem("Nombre de Clases", nombreDeLaClase)
-    alert(nombreDeLaClase)
+        guardarNombreDeClases(claseSeleccionada)
+        alert(claseSeleccionada)
+        formularioClase.reset()
+    }
+    
+    
 })
-
 
 botonAlumno.addEventListener("click",(event)=>{
     event.preventDefault()
     
-
-    let clase_almacenada = JSON.parse(localStorage.getItem(claseSeleccionada))
-
-    
-
-
+    let claseJSON = (localStorage.getItem(claseSeleccionada))
+    let claseAlmacenada = JSON.parse(claseJSON)
+    let claseReconstruida = reconstruirClases(claseAlmacenada)
     let nombre = document.getElementById("nombreInput").value
     let apellido = document.getElementById("apellidoInput").value
-    let nuevoAlumno = new Alumno(nombre, apellido)
-
     let nota1 = parseInt(document.getElementById("nota1Input").value)
     let nota2 = parseInt(document.getElementById("nota2Input").value)
     let nota3 = parseInt(document.getElementById("nota3Input").value)
     let nota4 = parseInt(document.getElementById("nota4Input").value)
 
-    nuevoAlumno.subirNotas(nota1)
-    nuevoAlumno.subirNotas(nota2)
-    nuevoAlumno.subirNotas(nota3)
-    nuevoAlumno.subirNotas(nota4)
-    nuevoAlumno.calcularPromedio()
+    if (validarInputNotas(nota1) && validarInputNotas(nota2) && validarInputNotas(nota3) && validarInputNotas(nota4) && validarInputTexto(nombre)&& validarInputTexto(apellido)){
+        let nuevoAlumno = new Alumno(nombre, apellido)
+        nuevoAlumno.subirNotas(nota1)
+        nuevoAlumno.subirNotas(nota2)
+        nuevoAlumno.subirNotas(nota3)
+        nuevoAlumno.subirNotas(nota4)
+        nuevoAlumno.calcularPromedio()
+        nuevoAlumno.verificarAprobado()
+        claseReconstruida.agregarAlumno(nuevoAlumno)
+        localStorage.setItem( claseReconstruida.nombre,JSON.stringify(claseReconstruida))
+        contenedorAlumno.style.display= "none"
+        contenedorFinal.style.display= "flex"
+        formularioAlumno.reset()
+    }
+    
+})
+botonOtroAlumno.addEventListener("click",()=>{
+    contenedorFinal.style.display= "none"
+    contenedorAlumno.style.display= "flex"
+    
+})
 
-    clase_almacenada.añadirAlumno(nuevoAlumno)
-
-    let clase_almacenadaJSON = JSON.stringify(clase_almacenada)
-    localStorage.setItem(nombreDeLaClase,clase_almacenadaJSON)
-
+botonVolverInicio.addEventListener("click",()=>{
+    contenedorFinal.style.display= "none"
+    contenedorInicio.style.display= "flex"
 
 })
+
+
+botonEditarClase.addEventListener("click",()=>{
+    contenedorInicio.style.display= "none"
+    contenedorEditar.style.display= "flex"
+})
+
+/* 
+
+HACER LINEAS POR CADA ALUMNO  (26/7)
+HACER QUE SE PUEDA AGRAGAR MAS ALUMNOS  (26/7)
+HACER QUE SE PUEDA BUSCAR LOS ALUMNOS   (proximamente)
+
+// Recuperar el objeto GrupoDeClase del Local Storage
+const grupoDeClaseString = localStorage.getItem("miGrupoDeClase");
+const grupoDeClase = JSON.parse(grupoDeClaseString);
+
+// Crear una nueva instancia de GrupoDeClase a partir de los datos recuperados
+const miGrupo = new GrupoDeClase(grupoDeClase.nombre);
+miGrupo.alumnos = grupoDeClase.alumnos;
+
+// Ahora puedes utilizar los métodos de la instancia miGrupo
+console.log(miGrupo.contarAlumnos()); // Output: Cantidad de alumnos en el grupo
+
+// También puedes modificar el objeto y luego guardarlo nuevamente en el Local Storage
+miGrupo.alumnos.push(new Alumno("Nuevo", "Alumno"));
+localStorage.setItem("miGrupoDeClase", JSON.stringify(miGrupo));
+
+
+
+*/
