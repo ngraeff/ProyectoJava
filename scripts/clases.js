@@ -41,6 +41,10 @@ class GrupoDeClase{
 }
 
 
+/* variables */
+
+let formaOrdenAlumno = "general"
+
 
 /* Secciones de clases */
 let listaDeClases = document.getElementById("listaClasesUl")
@@ -49,11 +53,25 @@ let listaDeClases = document.getElementById("listaClasesUl")
 /* Botones */
 
 let botonesInvisibles
+let botonBorrarTodo = document.getElementById("borrarTodo")
+let botonBorrarClase = document.getElementById("borrarClase")
 
+let botonOrdenarMayorPromedio = document.getElementById("ordenarMayorPromedio")
+let botonordenarZANombre= document.getElementById("ordenarZANombre")
+let botonOrdenarMenorPromedio = document.getElementById("ordenarMenorPromedio")
+let botonordenarAZNombre= document.getElementById("ordenarAZNombre")
 /* Funciones */
 
 function verificarContenido(elemento){
     if (elemento == "" || elemento== null){
+        return false
+    }else{
+        return true
+    }
+}
+
+function verificarClase(clase){
+    if (localStorage.getItem(clase)== null ){
         return false
     }else{
         return true
@@ -84,7 +102,9 @@ function mostrarClases(clases) {
     }
     
 }
-
+function borrarListado(){
+    listaDeClases.innerHTML = ''
+}
 function reconstruirClases(clase){
     let nombre = clase.nombre
     let alumnos = [] 
@@ -99,6 +119,7 @@ function reconstruirClases(clase){
     claseReconstruida.alumnos = alumnos
     return claseReconstruida
 }
+
 function mostrarNotas(notas) {
     let texto = ""
     for (let i = 0; i < notas.length; i++) {
@@ -109,64 +130,150 @@ function mostrarNotas(notas) {
         }
     return texto
 }
-
+function ordenarAlumnos(clase){
+    switch (formaOrdenAlumno){
+        case "a-z nombre":
+            clase.alumnos.sort((a,b)=> a.nombre.localeCompare(b.nombre))
+            break
+        case "mayor promedio":
+            clase.alumnos.sort((a,b)=> b.promedio - a.promedio)
+            break
+        case "menor promedio":
+            clase.alumnos.sort((a,b)=> a.promedio - b.promedio)
+            break
+        case "z-a nombre":
+            clase.alumnos.sort((a,b)=> b.nombre.localeCompare(a.nombre))
+            break
+    }
+    return clase
+}
 function eliminarEspacios(texto) {
-    return texto.replace(/\s+/g, '');
+    return texto.replace(/\s+/g, '')
+}
+function mostrarClasesIndividuales(){
+    botonesInvisibles.forEach(boton=>{
+        boton.addEventListener("click", (event)=>{
+
+            let nombreDeClase = event.currentTarget.querySelector(".nombre__de__clase").innerText
+            claseReconstruida = reconstruirClases(JSON.parse(localStorage.getItem(nombreDeClase)))
+            let contenedor = document.querySelectorAll(`[data-nombre= '${eliminarEspacios(claseReconstruida.nombre)}']`)
+            if(claseReconstruida.contarAlumnos()== 0 && contenedor.length== 0){
+                boton.innerHTML+=`<div class="sin__alumnos" data-nombre= ${eliminarEspacios(claseReconstruida.nombre)}>
+                <span class= "sin__alumnos--texto" >No hay ningun alumno en esta clase</span>
+                </div>`
+            }
+            else if (contenedor.length== 0){
+                boton.innerHTML+=`<div class="indentificador__items" data-nombre= ${eliminarEspacios(claseReconstruida.nombre)}>
+                <span class="nombre">Nombre</span>
+                <span class="apellido">Apellido</span>
+                <span class="notas">Notas</span>
+                <span class="promedio">Promedio</span>
+                <span class="condicion">Condicion</span>
+                </div>`
+                ordenarAlumnos(claseReconstruida)
+                for (const alumno of claseReconstruida.alumnos){
+                    let item = document.createElement("li")
+                    item.setAttribute("data-nombre",eliminarEspacios(claseReconstruida.nombre))
+                    let texto
+                    if (alumno.aprobado){
+                        texto = "Aprobado"
+                        item.style.background = "#8ad45a"
+                    }else{
+                        texto= "Desaprobado"
+                        item.style.backgroundColor= "#b94c4c"
+                    }
+                    
+                    item.className += "alumno__individual"
+                    item.innerHTML = `<div class="contenedor__borrador" }> <span class="nombre">${alumno.nombre}</span>
+                                    <span class="apellido">${alumno.apellido}</span>
+                                    <span class="notas">${ mostrarNotas(alumno.notas)}</span>
+                                    <span class="promedio">${alumno.promedio}</span>
+                                    <span class="condicion">${texto}</span> </div>`
+                    boton.appendChild(item)
+            }
+            }
+            else{
+                for(const elemento of contenedor){
+                    elemento.remove()
+                }
+                
+                
+            }
+        })
+    })
 }
 
 mostrarClases(JSON.parse(localStorage.getItem("ArraydeClases")))
+if (botonesInvisibles != null && botonesInvisibles != []){
+    mostrarClasesIndividuales()
+}
 
-botonesInvisibles.forEach(boton=>{
-    boton.addEventListener("click", (event)=>{
-        
-        let nombreDeClase = event.currentTarget.querySelector(".nombre__de__clase").innerText
-        claseReconstruida = reconstruirClases(JSON.parse(localStorage.getItem(nombreDeClase)))
-        let contenedor = document.querySelectorAll(`[data-nombre= '${eliminarEspacios(claseReconstruida.nombre)}']`)
-        switch (contenedor){
-            case contenedor.length== 0:
-                
-        }
-        if(claseReconstruida.contarAlumnos()== 0 && contenedor.length== 0){
-            boton.innerHTML+=`<div class="sin__alumnos" data-nombre= ${eliminarEspacios(claseReconstruida.nombre)}>
-            <span class= "sin__alumnos--texto" >No hay ningun alumno en esta clase</span>
-            </div>`
-        }
-        else if (contenedor.length== 0){
-            boton.innerHTML+=`<div class="indentificador__items" data-nombre= ${eliminarEspacios(claseReconstruida.nombre)}>
-            <span class="nombre">Nombre</span>
-            <span class="apellido">Apellido</span>
-            <span class="notas">Notas</span>
-            <span class="promedio">Promedio</span>
-            <span class="condicion">Condicion</span>
-            </div>`
+botonBorrarTodo.addEventListener("click",()=>{
+    localStorage.clear()
+    borrarListado()
+    mostrarClases(JSON.parse(localStorage.getItem("ArraydeClases")))
+})
 
-            for (const alumno of claseReconstruida.alumnos){
-                let item = document.createElement("li")
-                item.setAttribute("data-nombre",eliminarEspacios(claseReconstruida.nombre))
-                let texto
-                if (alumno.aprobado){
-                    texto = "Aprobado"
-                    item.style.background = "#8ad45a"
-                }else{
-                    texto= "Desaprobado"
-                    item.style.backgroundColor= "#b94c4c"
-                }
-                
-                item.className += "alumno__individual"
-                item.innerHTML = `<div class="contenedor__borrador" }> <span class="nombre">${alumno.nombre}</span>
-                                <span class="apellido">${alumno.apellido}</span>
-                                <span class="notas">${ mostrarNotas(alumno.notas)}</span>
-                                <span class="promedio">${alumno.promedio}</span>
-                                <span class="condicion">${texto}</span> </div>`
-                boton.appendChild(item)
+
+botonBorrarClase.addEventListener("click",(event) =>{
+    event.preventDefault()
+    const formulario = document.getElementById("formBorrarClase")
+    let nombreDeClase = document.getElementById("inputBorrarClase").value.toLocaleLowerCase()
+    if (verificarClase(nombreDeClase)){
+        localStorage.removeItem(nombreDeClase)
+        borrarListado()
+
+        let lista= JSON.parse(localStorage.getItem(("ArraydeClases")))
+        const indice = lista.indexOf(nombreDeClase)
+        if (indice !== -1) {
+            lista.splice(indice, 1)
         }
+        localStorage.setItem("ArraydeClases", JSON.stringify(lista))
+        mostrarClases(JSON.parse(localStorage.getItem("ArraydeClases")))
+
+
+        if (botonesInvisibles != null && botonesInvisibles != []){
+            mostrarClasesIndividuales()
         }
-        else{
-            for(const elemento of contenedor){
-                elemento.remove()
-            }
-            
-            
-        }
-    })
+    }else{
+        alert("Clase no encontrada")
+    }
+    formulario.reset()
+})
+
+botonOrdenarMayorPromedio.addEventListener("click",() =>{
+    formaOrdenAlumno = "mayor promedio"
+    borrarListado()
+    mostrarClases(JSON.parse(localStorage.getItem("ArraydeClases")))
+    if (botonesInvisibles != null && botonesInvisibles != []){
+        mostrarClasesIndividuales()
+    }
+})
+
+botonOrdenarMenorPromedio.addEventListener("click",() =>{
+    formaOrdenAlumno = "menor promedio"
+    borrarListado()
+    mostrarClases(JSON.parse(localStorage.getItem("ArraydeClases")))
+    if (botonesInvisibles != null && botonesInvisibles != []){
+        mostrarClasesIndividuales()
+    }
+})
+
+botonordenarAZNombre.addEventListener("click",() =>{
+    formaOrdenAlumno = "a-z nombre"
+    borrarListado()
+    mostrarClases(JSON.parse(localStorage.getItem("ArraydeClases")))
+    if (botonesInvisibles != null && botonesInvisibles != []){
+        mostrarClasesIndividuales()
+    }
+})
+
+botonordenarZANombre.addEventListener("click",() =>{
+    formaOrdenAlumno = "z-a nombre"
+    borrarListado()
+    mostrarClases(JSON.parse(localStorage.getItem("ArraydeClases")))
+    if (botonesInvisibles != null && botonesInvisibles != []){
+        mostrarClasesIndividuales()
+    }
+
 })

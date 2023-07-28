@@ -240,7 +240,6 @@ function guardarNombreDeClases(nombre){
     else{
         grupos = JSON.parse(grupos)
         grupos.push(nombre)
-        alert(grupos)
         localStorage.setItem("ArraydeClases", JSON.stringify(grupos))
     }
 }
@@ -268,7 +267,6 @@ formularioClaseBoton.addEventListener("click",(event)=>{
         contenedorAlumno.style.display= "flex"
 
         guardarNombreDeClases(claseSeleccionada)
-        alert(claseSeleccionada)
         formularioClase.reset()
     }
     
@@ -342,26 +340,7 @@ botonBuscarClase.addEventListener("click",(event)=>{
 })
 
 /* 
-
-HACER LINEAS POR CADA ALUMNO  (26/7)
 HACER QUE SE PUEDA BUSCAR LOS ALUMNOS   (proximamente)
 CAMBIAR LAS ALERTAS CON LIBRERIA (proximamente)
-
-// Recuperar el objeto GrupoDeClase del Local Storage
-const grupoDeClaseString = localStorage.getItem("miGrupoDeClase");
-const grupoDeClase = JSON.parse(grupoDeClaseString);
-
-// Crear una nueva instancia de GrupoDeClase a partir de los datos recuperados
-const miGrupo = new GrupoDeClase(grupoDeClase.nombre);
-miGrupo.alumnos = grupoDeClase.alumnos;
-
-// Ahora puedes utilizar los métodos de la instancia miGrupo
-console.log(miGrupo.contarAlumnos()); // Output: Cantidad de alumnos en el grupo
-
-// También puedes modificar el objeto y luego guardarlo nuevamente en el Local Storage
-miGrupo.alumnos.push(new Alumno("Nuevo", "Alumno"));
-localStorage.setItem("miGrupoDeClase", JSON.stringify(miGrupo));
-
-
 
 */

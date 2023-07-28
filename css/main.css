@@ -52,6 +52,150 @@ header nav .navbar .navbar--link:hover {
   color: rgb(10, 53, 117);
 }
 
+.ordenamiento__lista {
+  width: 100%;
+  margin-top: 2rem;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  text-align: center;
+}
+.ordenamiento__lista .botones__clase, .ordenamiento__lista .botones__alumno {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.ordenamiento__lista .botones__clase h3, .ordenamiento__lista .botones__alumno h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+.ordenamiento__lista .botones__clase {
+  padding-left: 13rem;
+  width: 20%;
+}
+.ordenamiento__lista .botones__clase form {
+  padding-bottom: 1rem;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.ordenamiento__lista .botones__clase form input {
+  width: 40%;
+  height: 3rem;
+  padding: 0 1rem;
+  border: 1px solid #000;
+  border-radius: 0.5rem;
+}
+.ordenamiento__lista .botones__clase form input:focus {
+  outline: none;
+}
+.ordenamiento__lista .botones__clase form button {
+  height: 3rem;
+  width: 35%;
+  padding: 0 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #000;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.ordenamiento__lista .botones__clase form button:hover {
+  background-color: #4e4e4e;
+  color: #ffffff;
+}
+.ordenamiento__lista .botones__clase .boton__borrar--todo {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.ordenamiento__lista .botones__clase .boton__borrar--todo #borrarTodo {
+  width: 100%;
+  height: 3rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #a71010;
+  color: #ffffff;
+  font-weight: 500;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.ordenamiento__lista .botones__clase .boton__borrar--todo #borrarTodo:hover {
+  background-color: #ff0000;
+  color: #ffffff;
+}
+.ordenamiento__lista .botones__alumno {
+  width: 40%;
+  padding-right: 8rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.ordenamiento__lista .botones__alumno div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+.ordenamiento__lista .botones__alumno div button {
+  height: 3rem;
+  width: 35%;
+  margin: 1rem;
+  padding: 0 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #01004d;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.ordenamiento__lista .botones__alumno div button:hover {
+  background-color: #00a6d8;
+  color: #000000;
+}
+
 .principal {
   width: 100%;
   height: 90vh;
@@ -79,10 +223,12 @@ header nav .navbar .navbar--link:hover {
   -webkit-transition: 1s all;
   transition: 1s all;
   border-radius: 50%;
+  -webkit-box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0);
+          box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0);
 }
 .principal .contenedor__inicio img:hover {
-  -webkit-transform: rotate(360deg);
-          transform: rotate(360deg);
+  -webkit-box-shadow: 1rem 1rem 1rem rgba(7, 1, 63, 0.4784313725);
+          box-shadow: 1rem 1rem 1rem rgba(7, 1, 63, 0.4784313725);
 }
 .principal .contenedor__inicio .contenedor__botones {
   width: 30rem;
@@ -99,7 +245,7 @@ header nav .navbar .navbar--link:hover {
           align-items: center;
 }
 .principal .contenedor__inicio .contenedor__botones button {
-  background-color: rgb(79, 165, 165);
+  background-color: #4fa5a5;
   height: 5rem;
   width: 10rem;
   padding: 0.5rem;
@@ -167,7 +313,7 @@ header nav .navbar .navbar--link:hover {
           justify-content: center;
 }
 .principal .contanedor__form .formulario__clase .formulario__clase--contenedor .formulario__clase--label {
-  color: rgb(255, 255, 255);
+  color: #ffffff;
   font-size: 2rem;
   font-weight: 500;
   margin-right: 2rem;
@@ -201,7 +347,7 @@ header nav .navbar .navbar--link:hover {
   margin-top: 3rem;
 }
 .principal .contanedor__form .formulario__clase .formulario__clase--contBoton button {
-  background-color: rgb(79, 165, 165);
+  background-color: #4fa5a5;
   height: 5rem;
   width: 10rem;
   padding: 0.5rem;
@@ -235,7 +381,7 @@ header nav .navbar .navbar--link:hover {
   align-items: center;
 }
 .principal .contenedor__alumno button {
-  background-color: rgb(79, 165, 165);
+  background-color: #4fa5a5;
   height: 5rem;
   width: 10rem;
   padding: 0.5rem;
@@ -299,7 +445,7 @@ header nav .navbar .navbar--link:hover {
           justify-content: center;
 }
 .principal .contenedor__alumno .formulario__alumno .contenedor__alumno--div .datos__nombre label {
-  color: rgb(255, 255, 255);
+  color: #ffffff;
   font-size: 1.5rem;
   font-weight: 500;
   margin: 0 2rem;
@@ -337,7 +483,7 @@ header nav .navbar .navbar--link:hover {
   padding: 2rem 0;
 }
 .principal .contenedor__alumno .formulario__alumno .contenedor__alumno--div .datos__notas div label {
-  color: rgb(255, 255, 255);
+  color: #ffffff;
   font-size: 1.5rem;
   font-weight: 500;
   margin: 0 2rem;
@@ -346,6 +492,9 @@ header nav .navbar .navbar--link:hover {
   width: 15rem;
   height: 2rem;
   border: none;
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
   font-size: 1rem;
   font-weight: 500;
   background-color: #01004d;
@@ -356,6 +505,11 @@ header nav .navbar .navbar--link:hover {
 }
 .principal .contenedor__alumno .formulario__alumno .contenedor__alumno--div .datos__notas div input:focus {
   outline: none;
+}
+.principal .contenedor__alumno .formulario__alumno .contenedor__alumno--div .datos__notas div input::-webkit-inner-spin-button, .principal .contenedor__alumno .formulario__alumno .contenedor__alumno--div .datos__notas div input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+          appearance: none;
+  margin: 0;
 }
 .principal .contenedor__final {
   width: 100%;
@@ -459,7 +613,7 @@ header nav .navbar .navbar--link:hover {
   margin-bottom: 4rem;
 }
 .principal .contenedor__editar div form label {
-  color: rgb(255, 255, 255);
+  color: #ffffff;
   font-size: 1.5rem;
   font-weight: 500;
   margin: 0 2rem;
@@ -480,7 +634,7 @@ header nav .navbar .navbar--link:hover {
   outline: none;
 }
 .principal .contenedor__editar div button {
-  background-color: rgb(79, 165, 165);
+  background-color: #4fa5a5;
   height: 5rem;
   width: 10rem;
   padding: 0.5rem;

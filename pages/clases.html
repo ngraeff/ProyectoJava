@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Clases</title>
     <link rel="stylesheet" href="../css/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,12 +31,34 @@
     </header>
 
     <main>
-
+        <section class="ordenamiento__lista">
+            <div class="botones__clase">
+                <h3>BOTONES DE CLASE</h3>
+                <form action="" id="formBorrarClase">
+                    <input type="text" placeholder="Nombre de clase" id="inputBorrarClase" required >
+                    <button id="borrarClase">BORRAR CLASE</button>
+                </form>
+                <div class="boton__borrar--todo">
+                    <button id="borrarTodo">BORRAR TODO</button>
+                </div>
+            </div>
+            <div class="botones__alumno">
+                <h3>BOTONES DE ALUMNO</h3>
+                <div>
+                    <button id="ordenarAZNombre">ORDENAR A-Z NOMBRE</button>
+                    <button  id="ordenarZANombre">ORDENAR Z-A NOMBRE</button>
+                </div>
+                <div>
+                    <button id="ordenarMayorPromedio">ORDENAR POR MAYOR PROMEDIO</button>
+                    <button  id="ordenarMenorPromedio">ORDENAR POR MENOR PROMEDIO</button>
+                </div>
+            </div>
+        </section>
         <section class="lista__clases" id="listaClases">
             <ul class="lista__clases--ul" id="listaClasesUl">
             </ul>
-
         </section>
+        
     </main>
 
 
