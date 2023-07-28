@@ -21,13 +21,16 @@
             border-bottom: 1px solid black;
             display: flex;
             width: 100%;
-            height: 4rem;
-            padding: 1.5rem 0;
+            height: auto;
+            padding: 2.2rem 0;
             transition: .5s all;
             &:hover{
                 background-color: #0065d8;
-                height: 5rem;
+                padding: 2.6rem;
                 
+            }
+            &:hover .boton__invisible .boton__invisible--divclass .indentificador__items{
+                    padding: 20rem;
             }
             .h2NoHay{
                 display: flex;
@@ -45,26 +48,99 @@
                 background-color: transparent;
                 border: none;
                 display: flex;
+                flex-direction: column;
                 justify-content: space-between;
                 align-items: center;
                 transition: .5s all;
                 &:hover{
                     cursor: pointer;
                 }
-
-                
-                
+                .boton__invisible--divclass{
+                    width: 100%;
+                    height: auto;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
                 h2{
                     font-size: 1.5rem;
                     color: black;
                     font-weight: 500;
-                    margin-left: 5rem;
+                    margin-left: 3rem;
                 }
                 p{
                     font-size: 1.5em;
                     color: black;
                     font-weight: 500;
-                    margin-right: 4rem;
+                    margin-right: 3rem;
+                }
+                .sin__alumnos{
+                    width: 100%;
+                    margin-top: 1rem ;
+                    border-top: 1px black solid;
+                    font-size: 1.2rem;
+                    text-align: center;
+                    height: 3rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-style: italic;
+                    span{
+                        padding-top: 2rem;
+                    }
+                }
+                .indentificador__items{
+                    width: 100%;
+                    background-color: #00a6d8;
+                    margin-top: 1rem ;
+                    padding: 1rem 0;
+                    height: 3rem;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    font-size: 1.2rem;
+                    border-top: 1px black solid;
+                    border-bottom: 1px black solid;
+                    text-align: center;
+                    .nombre{
+                        margin-left: 3rem;
+                        
+                    }
+                    .condicion{
+                        margin-right: 3rem;
+                        
+                    }
+                }
+                
+                
+                .alumno__individual{
+                        width: 100%;
+                        height: 3rem;
+                        padding: 1rem 0;
+                        border-bottom: 1px solid black;
+                        display: flex;
+                        font-size: 1.2rem;
+                        .contenedor__borrador{
+                            width: 100%;
+                            height: auto;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            .nombre{
+                                margin-left: 3rem;
+                                
+                            }
+                            .condicion{
+                                margin-right: 3rem;
+                            }
+                        }
+                    }
+                .indentificador__items span, .alumno__individual .contenedor__borrador span {
+                    display: inline-block;
+                    width: 8.5rem; 
+                    text-align: center;
+                    height: 2rem; 
+                    line-height: 2rem; 
                 }
             }
         }

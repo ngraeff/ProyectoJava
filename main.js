@@ -344,8 +344,8 @@ botonBuscarClase.addEventListener("click",(event)=>{
 /* 
 
 HACER LINEAS POR CADA ALUMNO  (26/7)
-
 HACER QUE SE PUEDA BUSCAR LOS ALUMNOS   (proximamente)
+CAMBIAR LAS ALERTAS CON LIBRERIA (proximamente)
 
 // Recuperar el objeto GrupoDeClase del Local Storage
 const grupoDeClaseString = localStorage.getItem("miGrupoDeClase");

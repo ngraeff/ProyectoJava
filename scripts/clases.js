@@ -45,7 +45,10 @@ class GrupoDeClase{
 /* Secciones de clases */
 let listaDeClases = document.getElementById("listaClasesUl")
 
-console.log(listaDeClases)
+
+/* Botones */
+
+let botonesInvisibles
 
 /* Funciones */
 
@@ -65,11 +68,13 @@ function mostrarClases(clases) {
     
             let item = document.createElement("li")
             item.className += "clase__individual"
-            item.innerHTML = `  <button class="boton__invisible"><h2>${claseReconstruida.nombre}</h2>
-                                <p >Alumnos: ${claseReconstruida.contarAlumnos()}</p></button>`
+            item.innerHTML = `  <button class="boton__invisible"><div class= "boton__invisible--divclass"><h2 class="nombre__de__clase">${claseReconstruida.nombre}</h2>
+                                <p >Alumnos: ${claseReconstruida.contarAlumnos()}</p></div></button>`
     
     
             listaDeClases.appendChild(item)
+            botonesInvisibles = document.querySelectorAll(".boton__invisible")
+        
         }
     }else{
         let item = document.createElement("li")
@@ -83,8 +88,6 @@ function mostrarClases(clases) {
 function reconstruirClases(clase){
     let nombre = clase.nombre
     let alumnos = [] 
-    console.log(clase.alumnos)
-
     claseReconstruida = new GrupoDeClase(nombre)
     for (const alumno of clase.alumnos) {
         let alumnoReconstruido = new Alumno(alumno.nombre, alumno.apellido)
@@ -96,8 +99,74 @@ function reconstruirClases(clase){
     claseReconstruida.alumnos = alumnos
     return claseReconstruida
 }
+function mostrarNotas(notas) {
+    let texto = ""
+    for (let i = 0; i < notas.length; i++) {
+        texto += notas[i]
+        if (i !== notas.length - 1) {
+            texto += " - "
+        }
+        }
+    return texto
+}
 
+function eliminarEspacios(texto) {
+    return texto.replace(/\s+/g, '');
+}
 
 mostrarClases(JSON.parse(localStorage.getItem("ArraydeClases")))
 
+botonesInvisibles.forEach(boton=>{
+    boton.addEventListener("click", (event)=>{
+        
+        let nombreDeClase = event.currentTarget.querySelector(".nombre__de__clase").innerText
+        claseReconstruida = reconstruirClases(JSON.parse(localStorage.getItem(nombreDeClase)))
+        let contenedor = document.querySelectorAll(`[data-nombre= '${eliminarEspacios(claseReconstruida.nombre)}']`)
+        switch (contenedor){
+            case contenedor.length== 0:
+                
+        }
+        if(claseReconstruida.contarAlumnos()== 0 && contenedor.length== 0){
+            boton.innerHTML+=`<div class="sin__alumnos" data-nombre= ${eliminarEspacios(claseReconstruida.nombre)}>
+            <span class= "sin__alumnos--texto" >No hay ningun alumno en esta clase</span>
+            </div>`
+        }
+        else if (contenedor.length== 0){
+            boton.innerHTML+=`<div class="indentificador__items" data-nombre= ${eliminarEspacios(claseReconstruida.nombre)}>
+            <span class="nombre">Nombre</span>
+            <span class="apellido">Apellido</span>
+            <span class="notas">Notas</span>
+            <span class="promedio">Promedio</span>
+            <span class="condicion">Condicion</span>
+            </div>`
 
+            for (const alumno of claseReconstruida.alumnos){
+                let item = document.createElement("li")
+                item.setAttribute("data-nombre",eliminarEspacios(claseReconstruida.nombre))
+                let texto
+                if (alumno.aprobado){
+                    texto = "Aprobado"
+                    item.style.background = "#8ad45a"
+                }else{
+                    texto= "Desaprobado"
+                    item.style.backgroundColor= "#b94c4c"
+                }
+                
+                item.className += "alumno__individual"
+                item.innerHTML = `<div class="contenedor__borrador" }> <span class="nombre">${alumno.nombre}</span>
+                                <span class="apellido">${alumno.apellido}</span>
+                                <span class="notas">${ mostrarNotas(alumno.notas)}</span>
+                                <span class="promedio">${alumno.promedio}</span>
+                                <span class="condicion">${texto}</span> </div>`
+                boton.appendChild(item)
+        }
+        }
+        else{
+            for(const elemento of contenedor){
+                elemento.remove()
+            }
+            
+            
+        }
+    })
+})
