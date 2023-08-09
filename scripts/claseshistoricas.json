@@ -229,6 +229,144 @@
                 ]
             }
         ]
+    },
+    {
+        "nombre": "2004",
+        "alumnos": [
+            {
+                "nombre": "Elena",
+                "apellido": "Gómez",
+                "promedio": 9.25,
+                "aprobado": true,
+                "notas": [9, 10, 9, 9]
+            },
+            {
+                "nombre": "Carlos",
+                "apellido": "Hernández",
+                "promedio": 8.00,
+                "aprobado": true,
+                "notas": [8, 8, 7, 9]
+            },
+            {
+                "nombre": "Laura",
+                "apellido": "Pérez",
+                "promedio": 7.75,
+                "aprobado": true,
+                "notas": [8, 7, 8, 8]
+            },
+            {
+                "nombre": "Alejandro",
+                "apellido": "García",
+                "promedio": 6.50,
+                "aprobado": true,
+                "notas": [6, 7, 6, 7]
+            },
+            {
+                "nombre": "Isabel",
+                "apellido": "Martínez",
+                "promedio": 7.00,
+                "aprobado": true,
+                "notas": [7, 7, 7, 7]
+            },
+            {
+                "nombre": "Javier",
+                "apellido": "López",
+                "promedio": 5.75,
+                "aprobado": false,
+                "notas": [6, 5, 6, 6]
+            },
+            {
+                "nombre": "María",
+                "apellido": "Rodríguez",
+                "promedio": 8.25,
+                "aprobado": true,
+                "notas": [8, 9, 8, 8]
+            },
+            {
+                "nombre": "Pedro",
+                "apellido": "Fernández",
+                "promedio": 6.75,
+                "aprobado": true,
+                "notas": [7, 7, 6, 7]
+            }
+        ]
+    },
+    {
+        "nombre": "2005",
+        "alumnos": [
+            {
+                "nombre": "Gabriela",
+                "apellido": "López",
+                "promedio": 7.75,
+                "aprobado": true,
+                "notas": [8, 8, 7, 8]
+            },
+            {
+                "nombre": "Andrés",
+                "apellido": "Gómez",
+                "promedio": 6.25,
+                "aprobado": true,
+                "notas": [6, 6, 7, 6]
+            },
+            {
+                "nombre": "Carolina",
+                "apellido": "Hernández",
+                "promedio": 4.50,
+                "aprobado": false,
+                "notas": [5, 4, 4, 5]
+            },
+            {
+                "nombre": "Sergio",
+                "apellido": "Martínez",
+                "promedio": 5.75,
+                "aprobado": false,
+                "notas": [6, 5, 5, 6]
+            },
+            {
+                "nombre": "Laura",
+                "apellido": "Pérez",
+                "promedio": 8.25,
+                "aprobado": true,
+                "notas": [8, 9, 8, 8]
+            },
+            {
+                "nombre": "Alejandro",
+                "apellido": "García",
+                "promedio": 7.00,
+                "aprobado": true,
+                "notas": [7, 7, 6, 8]
+            },
+            {
+                "nombre": "Isabel",
+                "apellido": "Fernández",
+                "promedio": 3.75,
+                "aprobado": false,
+                "notas": [4, 3, 4, 4]
+            },
+            {
+                "nombre": "Daniel",
+                "apellido": "Rodríguez",
+                "promedio": 6.75,
+                "aprobado": true,
+                "notas": [7, 7, 6, 7]
+            },
+            {
+                "nombre": "Lucía",
+                "apellido": "Gutiérrez",
+                "promedio": 8.50,
+                "aprobado": true,
+                "notas": [9, 8, 8, 9]
+            },
+            {
+                "nombre": "Fernando",
+                "apellido": "Luna",
+                "promedio": 4.00,
+                "aprobado": false,
+                "notas": [4, 5, 3, 4]
+            }
+        ]
     }
+    
+    
 ]
 

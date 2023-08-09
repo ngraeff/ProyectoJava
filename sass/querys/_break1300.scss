@@ -122,5 +122,55 @@
             }
         }
     }
+    .ordenamiento__lista{
+        .botones__clase,.botones__alumno{
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            h3{
+                font-size: 1.2rem;
+                font-weight: 500;
+                margin-bottom: 1rem;
+            }
+        }
+        .botones__clase{
+            padding-left: 5rem;
+            width: 40%; 
+        }
+    
+        .botones__alumno{
+            width: 50%;
+            padding-right: 4rem;
+            div{
+                button{
+                    font-size: .6rem;
+                    padding: 0;
+                }
+            }
+            
+        }
+    }
 
+    .lista__clases{
+        .lista__clases--ul{
+            width: 90%;
+            .clase__individual{
+                .boton__invisible{
+                    .indentificador__items{
+                        
+                        font-size: 1rem;
+                        
+                    }
+                    .alumno__individual{
+                            font-size: 1rem;
+                        }
+                }
+            }
+
+            .alumno{
+                font-size: 1rem;
+            }
+        }
+    
+    }
 }
