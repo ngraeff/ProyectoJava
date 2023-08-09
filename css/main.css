@@ -6,10 +6,12 @@
 
 header {
   width: 100%;
-  height: 6rem;
-  border-bottom: 2px solid black;
+  height: auto;
+  position: fixed;
 }
 header nav {
+  background-color: #00a6d8;
+  padding: 0.8rem 0;
   width: 100%;
   height: 100%;
   display: -webkit-box;
@@ -21,6 +23,8 @@ header nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transition: 0.6s all;
+  transition: 0.6s all;
 }
 header nav .navbar--logo {
   width: 4rem;
@@ -45,16 +49,22 @@ header nav .navbar .navbar--link {
   color: black;
   font-size: 1.5rem;
   font-weight: 500;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+  -webkit-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
 }
 header nav .navbar .navbar--link:hover {
-  color: rgb(10, 53, 117);
+  color: #2600ff;
+}
+
+.abajo {
+  padding: 0.5rem 0;
+  -webkit-box-shadow: 0 0 10px 1px #000;
+          box-shadow: 0 0 10px 1px #000;
 }
 
 .ordenamiento__lista {
+  padding-top: 10rem;
   width: 100%;
-  margin-top: 2rem;
   height: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -197,6 +207,7 @@ header nav .navbar .navbar--link:hover {
 }
 
 .principal {
+  padding-top: 5rem;
   width: 100%;
   height: 90vh;
 }
@@ -843,6 +854,102 @@ header nav .navbar .navbar--link:hover {
   margin-right: 3rem;
 }
 .lista__clases .lista__clases--ul .clase__individual .boton__invisible .indentificador__items span, .lista__clases .lista__clases--ul .clase__individual .boton__invisible .alumno__individual .contenedor__borrador span {
+  display: inline-block;
+  width: 8.5rem;
+  text-align: center;
+  height: 2rem;
+  line-height: 2rem;
+}
+.lista__clases .lista__clases--ul::-webkit-scrollbar-thumb {
+  background-color: #0065d8;
+  border-radius: 1rem;
+}
+.lista__clases .lista__clases--ul::-webkit-scrollbar {
+  width: 0.5rem;
+  background-color: #00a6d8;
+  border-radius: 1rem;
+}
+.lista__clases .lista__clases--ul::-webkit-scrollbar-track {
+  background-color: #00a6d8;
+  border-radius: 5rem;
+}
+
+.lista__clases .lista__clases--ul .sin__clase {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 2rem;
+  font-weight: 500;
+}
+.lista__clases .lista__clases--ul .indentificador__items {
+  width: 100%;
+  background-color: #00a6d8;
+  margin-top: 1rem;
+  padding: 1rem 0;
+  height: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.2rem;
+  border-top: 1px black solid;
+  border-bottom: 1px black solid;
+  text-align: center;
+}
+.lista__clases .lista__clases--ul .indentificador__items .nombre {
+  margin-left: 3rem;
+}
+.lista__clases .lista__clases--ul .indentificador__items .condicion {
+  margin-right: 3rem;
+}
+.lista__clases .lista__clases--ul .alumno {
+  width: 100%;
+  height: 3rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.2rem;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+.lista__clases .lista__clases--ul .alumno .contenedor__borrador {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.lista__clases .lista__clases--ul .alumno .contenedor__borrador .nombre {
+  margin-left: 3rem;
+}
+.lista__clases .lista__clases--ul .alumno .contenedor__borrador .condicion {
+  margin-right: 3rem;
+}
+.lista__clases .lista__clases--ul .alumno:hover {
+  padding: 2rem 0;
+}
+.lista__clases .lista__clases--ul .indentificador__items span, .lista__clases .lista__clases--ul .alumno .contenedor__borrador span {
   display: inline-block;
   width: 8.5rem;
   text-align: center;

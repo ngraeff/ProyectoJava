@@ -53,13 +53,13 @@ let listaDeClases = document.getElementById("listaClasesUl")
 /* Botones */
 
 let botonesInvisibles
-let botonBorrarTodo = document.getElementById("borrarTodo")
-let botonBorrarClase = document.getElementById("borrarClase")
+const botonBorrarTodo = document.getElementById("borrarTodo")
+const botonBorrarClase = document.getElementById("borrarClase")
 
-let botonOrdenarMayorPromedio = document.getElementById("ordenarMayorPromedio")
-let botonordenarZANombre= document.getElementById("ordenarZANombre")
-let botonOrdenarMenorPromedio = document.getElementById("ordenarMenorPromedio")
-let botonordenarAZNombre= document.getElementById("ordenarAZNombre")
+const botonOrdenarMayorPromedio = document.getElementById("ordenarMayorPromedio")
+const botonordenarZANombre= document.getElementById("ordenarZANombre")
+const botonOrdenarMenorPromedio = document.getElementById("ordenarMenorPromedio")
+const botonordenarAZNombre= document.getElementById("ordenarAZNombre")
 /* Funciones */
 
 function verificarContenido(elemento){
@@ -276,4 +276,10 @@ botonordenarZANombre.addEventListener("click",() =>{
         mostrarClasesIndividuales()
     }
 
+})
+
+/* scroll */
+window.addEventListener("scroll", () => {
+    let header = document.querySelector("nav")
+    header.classList.toggle("abajo", window.scrollY > 0)
 })

@@ -1,16 +1,17 @@
 header{
     width: 100%;
-    height: 6rem;
-    border-bottom: 2px solid black;
-
-
+    height: auto;
+    position: fixed;
+    
     nav{
+        background-color: #00a6d8;
+        padding: .8rem 0;
         width: 100%;
         height: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
-
+        transition: .6s all;
         .navbar--logo{
             width: 4rem;
             padding-left: 2rem;
@@ -29,12 +30,17 @@ header{
                 color: black;
                 font-size: 1.5rem;
                 font-weight: 500;
-                transition: all 0.3s ease-in-out;
+                transition: .3s all ease-in-out;
 
                 &:hover{
-                    color: rgb(10, 53, 117);
+                    color: #2600ff;
                 }
             }
         }
     }
+}
+
+.abajo{
+    padding: .5rem 0;
+    box-shadow: 0 0 10px 1px #000;
 }

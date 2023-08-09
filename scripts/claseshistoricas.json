@@ -1,0 +1,234 @@
+[
+    {
+        "nombre": "2000",
+        "alumnos": [
+            {
+                "nombre": "Nicolas",
+                "apellido": "Graeff",
+                "promedio": 9,
+                "aprobado": true,
+                "notas": [
+                    10,
+                    9,
+                    10,
+                    7
+                ]
+            },
+            {
+                "nombre": "Matias",
+                "apellido": "Perez",
+                "promedio": 6.25,
+                "aprobado": true,
+                "notas": [
+                    6,
+                    5,
+                    7,
+                    7
+                ]
+            },
+            {
+                "nombre": "Nahuel",
+                "apellido": "Garcia ",
+                "promedio": 5.25,
+                "aprobado": false,
+                "notas": [
+                    5,
+                    4,
+                    7,
+                    5
+                ]
+            },
+            {
+                "nombre": "Micaela",
+                "apellido": "Arse",
+                "promedio": 8.25,
+                "aprobado": true,
+                "notas": [
+                    8,
+                    8,
+                    9,
+                    8
+                ]
+            },
+            {
+                "nombre": "Luana",
+                "apellido": "Fatima",
+                "promedio": 6.50,
+                "aprobado": true,
+                "notas": [
+                    6,
+                    6,
+                    7,
+                    7
+                ]
+            },
+            {
+                "nombre": "Rodrigo",
+                "apellido": "Masedo",
+                "promedio": 7.75,
+                "aprobado": true,
+                "notas": [
+                    8,
+                    8,
+                    8,
+                    7
+                ]
+            }
+        ]
+    },
+    {
+        "nombre": "2001",
+        "alumnos": [
+            {
+                "nombre": "Paula",
+                "apellido": "Gonzales",
+                "promedio": 4,
+                "aprobado": false,
+                "notas": [
+                    3,
+                    3,
+                    5,
+                    5
+                ]
+            },
+            {
+                "nombre": "Matias",
+                "apellido": "Benitez",
+                "promedio": 6.25,
+                "aprobado": true,
+                "notas": [
+                    6,
+                    5,
+                    7,
+                    7
+                ]
+            },
+            {
+                "nombre": "Delfina",
+                "apellido": "Navarro",
+                "promedio": 9.25,
+                "aprobado": true,
+                "notas": [
+                    9,
+                    9,
+                    10,
+                    9
+                ]
+            },
+            {
+                "nombre": "Micaela",
+                "apellido": "Hirose",
+                "promedio": 8.25,
+                "aprobado": true,
+                "notas": [
+                    8,
+                    8,
+                    9,
+                    8
+                ]
+            },
+            {
+                "nombre": "Ruben",
+                "apellido": "Dario",
+                "promedio": 6.50,
+                "aprobado": true,
+                "notas": [
+                    6,
+                    6,
+                    7,
+                    7
+                ]
+            },
+            {
+                "nombre": "Gonzalo",
+                "apellido": "Vasquez",
+                "promedio": 6.50,
+                "aprobado": true,
+                "notas": [
+                    7,
+                    8,
+                    6,
+                    5
+                ]
+            }
+        ]
+    },
+    {
+        "nombre": "2003",
+        "alumnos": [
+            {
+                "nombre": "Juan",
+                "apellido": "Lopez",
+                "promedio": 7.75,
+                "aprobado": true,
+                "notas": [
+                    6,
+                    8,
+                    10,
+                    7
+                ]
+            },
+            {
+                "nombre": "Manuel",
+                "apellido": "Casarez",
+                "promedio": 3.75,
+                "aprobado": false,
+                "notas": [
+                    1,
+                    4,
+                    6,
+                    4
+                ]
+            },
+            {
+                "nombre": "Owen",
+                "apellido": "Corales",
+                "promedio": 7.50,
+                "aprobado": true,
+                "notas": [
+                    7,
+                    9,
+                    7,
+                    7
+                ]
+            },
+            {
+                "nombre": "Ignacio",
+                "apellido": "Campos",
+                "promedio": 6,
+                "aprobado": true,
+                "notas": [
+                    5,
+                    9,
+                    4,
+                    6
+                ]
+            },
+            {
+                "nombre": "Cristian",
+                "apellido": "Pacheco",
+                "promedio": 6.50,
+                "aprobado": true,
+                "notas": [
+                    6,
+                    6,
+                    7,
+                    7
+                ]
+            },
+            {
+                "nombre": "Maria",
+                "apellido": "Prado",
+                "promedio": 8,
+                "aprobado": true,
+                "notas": [
+                    8,
+                    8,
+                    8,
+                    8
+                ]
+            }
+        ]
+    }
+]
+
