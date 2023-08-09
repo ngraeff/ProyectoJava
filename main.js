@@ -213,6 +213,15 @@ botonBuscarClase.addEventListener("click",(event)=>{
     }
 })
 
+
+
+
+/* scroll */
+window.addEventListener("scroll", () => {
+    let header = document.querySelector("nav")
+    header.classList.toggle("abajo", window.scrollY > 0)
+})
+
 /* 
 HACER QUE SE PUEDA BUSCAR LOS ALUMNOS   (proximamente)
 CAMBIAR LAS ALERTAS CON LIBRERIA (proximamente)
