@@ -74,7 +74,6 @@ let contenedorEditar = document.getElementById("contenedorEditar")
 function reconstruirClases(clase){
     let nombre = clase.nombre
     let alumnos = [] 
-    console.log(clase.alumnos)
 
     claseReconstruida = new GrupoDeClase(nombre)
     for (const alumno of clase.alumnos) {
@@ -91,16 +90,27 @@ function reconstruirClases(clase){
 function validarInputTexto(valor){
     let val= true
     if (valor == null || valor.trim() == "" ){
-        alert("Por favor ingrese texto")
+        toastr.warning("Ingrese texto", "Alerta", { timeOut: 2000 })
         val= false}
+    return val
+}
+
+function validarNuevaClase(clase){
+    let val= true
+    clases= JSON.parse(localStorage.getItem("ArraydeClases"))
+
+    if (clases.includes(clase)){
+        toastr.warning("La clase ya existe", "Alerta", { timeOut: 2000 })
+        val= false
+    }
     return val
 }
 
 function validarInputNotas(nota) {
     let val = true
     if (nota > 10 || nota <= 0 || isNaN(nota) || nota === "") {
-    alert("Ingrese las notas en un rango de 0 - 10")
-    console.log(nota)
+    toastr.warning("Ingrese las notas en un rango de 0 - 10", "Alerta", { timeOut: 2000 })
+    
     val = false
     }
     return val
@@ -132,7 +142,7 @@ formularioClaseBoton.addEventListener("click",(event)=>{
     event.preventDefault()
     let claseInput = document.getElementById("formuladrioClaseInput")
     claseSeleccionada= claseInput.value.toLocaleLowerCase()
-    if  (validarInputTexto(claseSeleccionada)){
+    if  (validarInputTexto(claseSeleccionada) &&  validarNuevaClase(claseSeleccionada)){
 
         let nuevaClase = new GrupoDeClase(claseSeleccionada)
         let nuevaClaseJSON = JSON.stringify(nuevaClase)
@@ -200,12 +210,12 @@ botonBuscarClase.addEventListener("click",(event)=>{
     event.preventDefault()
     nombreClase= document.getElementById("inputEditar").value
     nombreClase = nombreClase.toLocaleLowerCase()
-    console.log("Hola")
     if (!(localStorage.hasOwnProperty(nombreClase))){
-        alert("La clase que busca no existe")
+        toastr.error("La clase que busca no existe", "Error", { timeOut: 2000 })
     }
     else{
-        alert(`La clase ${nombreClase.toUpperCase()} ha sido encontrada. Ahora puede agregarle mas alumnos`)
+        toastr.success(`La clase ${nombreClase.toUpperCase()} ha sido encontrada. Ahora puede agregarle mas alumnos`, "Exito", { timeOut: 2000 })
+        
         claseSeleccionada = nombreClase
         contenedorEditar.style.display= "none"
         contenedorAlumno.style.display= "flex"
@@ -222,11 +232,6 @@ window.addEventListener("scroll", () => {
     header.classList.toggle("abajo", window.scrollY > 0)
 })
 
-/* 
-HACER QUE SE PUEDA BUSCAR LOS ALUMNOS   (proximamente)
-CAMBIAR LAS ALERTAS CON LIBRERIA (proximamente)
-
-*/
 /* NAVBAR */
 const toggle= document.querySelector(".toggle")
 const links = document.querySelector(".navbar")
@@ -234,7 +239,7 @@ const linkNav= document.querySelectorAll(".navbar--link")
 
 toggle.addEventListener("click", function () {
     links.classList.toggle("active")
-    toggle.classList.toggle("active");
+    toggle.classList.toggle("active")
 })
 
 linkNav.forEach(link => {

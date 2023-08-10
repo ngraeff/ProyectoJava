@@ -75,6 +75,14 @@ const obtenerClases = async () => {
     }
 }
 
+function validarInputTexto(valor){
+    let val= true
+    if (valor == null || valor.trim() == "" ){
+        toastr.warning("Ingrese texto", "Alerta", { timeOut: 2000 })
+        val= false}
+    return val
+}
+
 
 function reconstruirClases(clase){
     let nombre = clase.nombre
@@ -148,7 +156,8 @@ const cargarClase = async () => {
         buscarClaseBoton.addEventListener("click", (event) => {
             event.preventDefault()
             const año = document.getElementById("inputBuscarClase").value
-            let contador = 0
+            if (validarInputTexto(año)){
+                let contador = 0
             borrarListado()
             clasesHistoricas.forEach(clase => {
                 if (clase.nombre===año){
@@ -159,8 +168,9 @@ const cargarClase = async () => {
             if (contador==0){
                 mostrarClaseNoEncontrada(año)
             }
-            
+            }
             formulario.reset()
+            
         })
     } catch (error) {
         console.error('Error al cargar clases:', error)

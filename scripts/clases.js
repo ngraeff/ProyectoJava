@@ -236,7 +236,7 @@ botonBorrarClase.addEventListener("click",(event) =>{
             mostrarClasesIndividuales()
         }
     }else{
-        alert("Clase no encontrada")
+        toastr.error("Clase no encontrada", "Error", { timeOut: 2000 })
     }
     formulario.reset()
 })
@@ -291,7 +291,7 @@ const linkNav= document.querySelectorAll(".navbar--link")
 
 toggle.addEventListener("click", function () {
     links.classList.toggle("active")
-    toggle.classList.toggle("active");
+    toggle.classList.toggle("active")
 })
 
 linkNav.forEach(link => {
