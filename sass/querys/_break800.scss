@@ -1,0 +1,309 @@
+@media screen and (max-width: 800px) {
+
+    header{
+        nav{
+            .navbar{
+                padding: 0;
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                top: -100vh;
+                bottom: 0;
+                background-color:  #00a6d8;
+                overflow: hidden;
+                width: 100%;
+                z-index: -1;
+                height: calc(100vh - 11rem);
+                transition: top 0.5s;
+                border-bottom: 2px solid black;
+                
+            }
+            .active {
+                top: 0;
+            }
+            .toggle {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin-right: 2rem;
+                width: 30px;
+                height: 30px;
+                cursor: pointer;
+
+                .toggle__line {
+                    width: 100%;
+                    height: 3px;
+                    
+                    background-color: #000;
+                    margin: 2px 0;
+                    
+                    transition: all 0.3s;
+                }
+            }
+
+            .toggle.active .toggle__line--up {
+                transform: rotate(45deg) translateY(6.8px) scaleX(1.3);
+                margin: 0;
+            }
+
+            .toggle.active .toggle__line--down {
+                transform: rotate(-45deg) translateY(-6.8px) scaleX(1.3);
+                margin: 0;
+            }
+
+            .toggle.active .toggle__line--mid {
+                background-color: transparent;
+            }
+        }
+    }
+
+    .principal {
+        
+        .contenedor__inicio {
+            img {
+                width: 20rem;
+            }
+            .contenedor__botones {
+                padding-top: 5rem;
+            }
+        }
+        .contanedor__form {
+            .formulario__clase {
+                .formulario__clase--contenedor {
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    .formulario__clase--label {
+                        font-size: 1.5rem;
+                        margin: 0;
+                    }
+                    .formulario__clase--input{
+                        margin-top: 2rem;
+                        width: 20rem;
+                    }
+                }
+            }
+
+        }
+        .contenedor__alumno {
+            height: auto;
+            padding-bottom: 4rem;
+            .formulario__alumno {
+                width: 70%;
+                height: auto;
+                padding: 4rem 2rem;
+
+                
+                .contenedor__alumno--div {
+                    .datos__nombre {
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        
+                        label {
+                            margin-top: 2rem;
+                        }
+
+                        input {
+                            margin-top: 1rem;
+                            width:15rem;
+                            text-align: center;
+                        }
+                    }
+
+                    .datos__notas {
+                        margin-bottom: 5rem;
+
+                        div {
+                            width: 100%;
+                            justify-content: center;
+                            align-items: center;
+                            display: flex;
+                            flex-direction: column;
+                            padding: 0;
+                            padding-bottom: 1.5rem;
+
+                            label {
+                                font-size: 1.2rem;
+                                margin-top: 1.5rem;
+                            }
+
+                            input {
+                                width: 15rem;
+                                height: 2rem;
+                                text-align: center;
+                            }
+
+                        }
+
+
+                    }
+                }
+            }
+        }
+
+        .contenedor__final {
+            div {
+                width: 80%;
+                padding: 1rem;
+                flex-direction: column;
+                button{
+                    width: 12rem;
+                    height: 4rem;
+                    margin-top: 2rem;
+                    font-size: .8rem;
+                }
+            }
+        }
+
+        .contenedor__editar {
+            div {
+                width: 80%;
+                height: 30rem;
+                padding: 2rem;
+                h2 {
+                    text-align: center;
+                    font-size: 2rem;
+                    padding-bottom: 5rem;
+                }
+                form {
+                    width: 100%;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    label {
+                        color: #ffffff;
+                        font-size: 1.2rem;
+                        font-weight: 500;padding-bottom: 2rem;
+                    }
+                    input{
+
+                        text-align: center;
+                    }
+                }
+                button {
+                    height: 4rem;
+                    width: 8rem;
+                    padding: .5rem;
+                }
+            }
+        }
+    }
+    .ordenamiento__lista{
+        display: flex;
+        flex-direction: column;
+        .botones__clase,.botones__alumno{
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            h3{
+                font-size: 1.2rem;
+                font-weight: 500;
+                margin-bottom: 1rem;
+            }
+        }
+        .botones__clase{
+            padding-left: 0rem;
+            width: 100%; 
+            form{
+                justify-content: center;
+                input{
+                    width: 8rem;
+                    margin-right: 1rem;
+                }
+                button {
+                    margin-left: 1rem;
+                    width: 8rem;
+                }
+            }
+            .boton__borrar--todo{
+                #borrarTodo{
+                    width: 12rem;
+                    
+                }
+            }
+            
+        }
+    
+        .botones__alumno{
+            width: 100%;
+            padding-top: 3rem;
+            padding-right: 0;
+            div{
+                button{
+                    font-size: .6rem;
+                    padding: 0;
+                    width: 11rem;
+                }
+            }
+            
+        }
+    }
+    .lista__clases{
+        .lista__clases--ul{
+            width: 90%;
+            .indentificador__items{
+                        
+                font-size: 1rem;
+                .condicion{
+                    display: none;
+                }
+                .nombre{
+                    margin :0;
+                }
+                
+            }
+            .sin__clase{
+                font-size: 1.5rem;
+                text-align: center;
+                padding: 0 1rem;
+            }
+
+            .alumno{
+                .contenedor__borrador{
+                    .nombre{
+                        margin :0;
+                    }
+                    .condicion{
+                        display: none;
+                    }
+                }
+            }
+            .clase__individual{
+                .boton__invisible{
+                    .indentificador__items{
+                        
+                        font-size: 1rem;
+                        .condicion{
+                            display: none;
+                        }
+                        .nombre{
+                            margin :0;
+                        }
+                        
+                    }
+                    .alumno__individual{
+                            font-size: 1rem;
+                            
+                            .contenedor__borrador{
+                                .nombre{
+                                    margin :0;
+                                }
+                                .condicion{
+                                    display: none;
+                                }
+                            }
+                        }
+                }
+            }
+
+            .alumno{
+                font-size: 1.5rem;
+            }
+        }
+    
+    }
+
+
+}

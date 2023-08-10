@@ -227,3 +227,20 @@ HACER QUE SE PUEDA BUSCAR LOS ALUMNOS   (proximamente)
 CAMBIAR LAS ALERTAS CON LIBRERIA (proximamente)
 
 */
+/* NAVBAR */
+const toggle= document.querySelector(".toggle")
+const links = document.querySelector(".navbar")
+const linkNav= document.querySelectorAll(".navbar--link")
+
+toggle.addEventListener("click", function () {
+    links.classList.toggle("active")
+    toggle.classList.toggle("active");
+})
+
+linkNav.forEach(link => {
+    link.addEventListener("click", function () {
+        links.classList.remove("active")
+        toggle.classList.remove("active")
+    })})
+
+    
