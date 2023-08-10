@@ -1,0 +1,201 @@
+@media screen and (max-width: 500px) {
+    header{
+        
+        nav{
+    
+            .navbar--logo{
+                padding: 0;
+                width: 3rem;
+                margin-right: 4rem;
+            }
+            justify-content: space-around;       
+            .toggle {
+                margin-right: 0;
+                margin-left: 1rem;
+            }
+        }
+    }
+    .principal {
+        .contenedor__inicio {
+            width: 100%;
+            margin: 0;
+            img {
+                width: 15rem;
+            }
+            .contenedor__botones {
+                width: 100%;
+                flex-direction: column;
+                button{
+                    padding: .3rem;
+                    margin: .5rem;
+
+                }
+            }
+        }
+        .contanedor__form {
+            .formulario__clase {
+                margin-top: 1rem;
+                width: 70%;
+                padding: 2rem;
+                height: 30rem;
+                .formulario__clase--contenedor {
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    .formulario__clase--label {
+                        font-size: 1.2rem;
+                        text-align: center;
+                        margin: 0;
+                    }
+                    .formulario__clase--input{
+                        margin-top: 2rem;
+                        width: 10rem;
+                    }
+                }
+                .formulario__clase--contBoton{
+                    button{
+                        padding: 0;
+                        height: 3rem;
+                    }
+                }
+            }
+
+        }
+        .contenedor__alumno {
+        
+            .formulario__alumno {
+                .contenedor__alumno--div {
+                    .datos__nombre {
+                        input {
+                            width:10rem;
+                        }
+                    }
+                    .datos__notas {
+
+                        div {
+                            input {
+                                width: 10rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .contenedor__final {
+            div {
+                width: 80%;
+                padding: 1rem;
+                flex-direction: column;
+                button{
+                    width: 12rem;
+                    height: 4rem;
+                    margin-top: 2rem;
+                    font-size: .8rem;
+                }
+            }
+        }
+
+        .contenedor__editar {
+            div {
+                padding: 1rem;
+                h2 {
+                    font-size: 1.5rem;
+                }
+                form {
+                    label {
+                        text-align: center;
+                    }
+                    input{
+                        width: 10rem;
+                    }
+                }
+            }
+        }
+    }
+    .ordenamiento__lista{
+        .botones__clase{
+            
+            form{
+                justify-content: center;
+                input{
+                    font-size: .7rem;
+                    width: 6rem;
+                    margin-right: 1rem;
+                }
+                button {
+                    margin-left: 1rem;
+                    width: 6rem;
+                }
+            }
+            
+        }
+    }
+    .lista__clases{
+        .lista__clases--ul{
+            .indentificador__items{
+                        
+                font-size: 1rem;
+                .notas{
+                    display: none;
+                }
+                
+            }
+            .sin__clase{
+                font-size: 1.5rem;
+                text-align: center;
+                padding: 0 1rem;
+            }
+
+            .alumno{
+                .contenedor__borrador{
+                    .nombre{
+                        margin :0;
+                    }
+                    .condicion{
+                        display: none;
+                    }
+                }
+            }
+            .clase__individual{
+                .boton__invisible{
+                    .boton__invisible--divclass{
+                        h2{
+                            font-size: 1.2rem;
+                            margin-left: 1.5rem;
+                        }
+                        p{
+                            font-size: 1.2rem;
+                            margin-right: 1.5rem;
+                        }
+                    }
+                    .indentificador__items{
+                        
+                        .notas{
+                            display: none;
+                        }
+                    }
+                    .alumno__individual{
+                            .contenedor__borrador{
+                                .notas{
+                                    display: none;
+                                }
+                            }
+                        }
+                }
+            }
+
+            .alumno{
+                
+                .contenedor__borrador{
+                    .notas{
+                        display: none;
+                    }
+                }
+            }
+        }
+    
+    }
+
+
+}

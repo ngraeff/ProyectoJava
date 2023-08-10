@@ -58,20 +58,20 @@ const formulario= document.getElementById("buscarClaseForm")
 const obtenerClasesServidor = async () => {
     try {
         const clasesHistoricas = await fetch(clasesHistoricasJSON)
-            .then(res => res.json());
+            .then(res => res.json())
 
-        return clasesHistoricas;
+        return clasesHistoricas
     } catch (error) {
-        console.log(error);
+        console.log(error)
     }
 }
 
 const obtenerClases = async () => {
     try {
-        const clasesHistoricas = await obtenerClasesServidor();
-        return clasesHistoricas;
+        const clasesHistoricas = await obtenerClasesServidor()
+        return clasesHistoricas
     } catch (e) {
-        console.log(e);
+        console.log(e)
     }
 }
 
@@ -133,7 +133,7 @@ function mostrarAlumnos(listado){
 
 function borrarListado(){
     while (seccionAlumnos.firstChild) {
-        seccionAlumnos .removeChild(seccionAlumnos .firstChild);
+        seccionAlumnos .removeChild(seccionAlumnos .firstChild)
     }
 }
 
@@ -143,11 +143,11 @@ function mostrarClaseNoEncontrada(año){
 
 const cargarClase = async () => {
     try {
-        const clasesHistoricas = await obtenerClases();
+        const clasesHistoricas = await obtenerClases()
 
         buscarClaseBoton.addEventListener("click", (event) => {
-            event.preventDefault();
-            const año = document.getElementById("inputBuscarClase").value;
+            event.preventDefault()
+            const año = document.getElementById("inputBuscarClase").value
             let contador = 0
             borrarListado()
             clasesHistoricas.forEach(clase => {
@@ -161,14 +161,14 @@ const cargarClase = async () => {
             }
             
             formulario.reset()
-        });
+        })
     } catch (error) {
-        console.error('Error al cargar clases:', error);
+        console.error('Error al cargar clases:', error)
     }
     
-};
+}
 
-cargarClase();
+cargarClase()
 
 /* scroll */
 window.addEventListener("scroll", () => {
@@ -183,7 +183,7 @@ const linkNav= document.querySelectorAll(".navbar--link")
 
 toggle.addEventListener("click", function () {
     links.classList.toggle("active")
-    toggle.classList.toggle("active");
+    toggle.classList.toggle("active")
 })
 
 linkNav.forEach(link => {

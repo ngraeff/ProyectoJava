@@ -299,11 +299,35 @@
             }
 
             .alumno{
-                font-size: 1.5rem;
+                
+                .contenedor__borrador{
+                    span{
+                        font-size: 1rem;
+                    }
+                }
             }
         }
     
     }
+    .buscador__clase{
+        .botones__clase{
+            h3{
+                font-size: 1.2rem;
+                font-weight: 500;
+                margin-bottom: 1rem;
+            }
+            form{
+                input{
+                    width: 6rem;
+                    margin-right: 1rem;
+                }
+                button {
+                    margin-left: 1rem;
+                    width: 6rem;
+                }
+            }
+        }
 
+    }
 
 }
