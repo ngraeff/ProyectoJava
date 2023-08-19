@@ -98,12 +98,16 @@ function validarInputTexto(valor){
 function validarNuevaClase(clase){
     let val= true
     clases= JSON.parse(localStorage.getItem("ArraydeClases"))
-
-    if (clases.includes(clase)){
-        toastr.warning("La clase ya existe", "Alerta", { timeOut: 2000 })
-        val= false
+    if (clases != undefined){
+        if (clases.includes(clase)){
+            toastr.warning("La clase ya existe", "Alerta", { timeOut: 2000 })
+            val= false
+        }
     }
+    
     return val
+    
+    
 }
 
 function validarInputNotas(nota) {
